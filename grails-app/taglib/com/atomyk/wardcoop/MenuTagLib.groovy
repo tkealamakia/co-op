@@ -6,11 +6,14 @@ class MenuTagLib {
 
     static namespace = "menu"
     def menuBar = { attrs ->
-        out << "<div class=\"nav\">"
-        out << "<span class=\"menuButton\"><a href=\"${resource(dir:'')}\" class=\"home\" >Home</a></span>"
+        out << "<div class=\"navigation\">"
+        out << "<div class=\"navigationlinks\">"
+        out << "<ul class=\"navigation\">"
         Category.findAll().each {
-            out << "<span class=\"menuButton\"><a href=\"/wardcoop/post/list\" class=\"list\" >${it.name}</a></span>"
+            out << "<li><a href=\"/wardcoop/post/list\">${it.name}</a></li>"
         }
+        out << "</ul>"
+        out << "</div>"
         out << "</div>"
     }
 
