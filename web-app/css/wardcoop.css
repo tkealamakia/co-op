@@ -67,19 +67,24 @@ color:rgb(165,190,57);
 /*This is where Header-specific styles begin*/
 div.header
 {
+display:inline;
+width:920px;
+margin:5px 0px 0px 5px;
 float:left;
+height:100px;
 }
 div.logo
 {
-display:inline;
+position:absolute;
 float:left;
-margin:5px 0px 0px 5px;
+margin:0px 0px 0px 0px;
 }
 
 div.logotextwardname
 {
+position:absolute;
 float:left;
-margin:4px 0px 0px 59px;
+margin:0px 0px 0px 154px;
 }
 
 div.logotext
@@ -97,8 +102,8 @@ color:rgb(165,190,57);
 
 div.wardname
 {
-float:left;
 clear:left;
+float:left;
 margin:0px 0px 0px 0px;
 color: rgb(105,96,74);
 font-weight:bold;
@@ -108,9 +113,8 @@ div.linkbox
 {
 width:300px;
 height:100px;
-float:left;
-margin:5px 0px 0px 288px;
-_margin:5px 0px 0px 283px;
+float:right;
+margin:0px 0px 0px 0px;
 background-color: rgb(105,96,74);
 }
 
@@ -150,7 +154,7 @@ clear:left;
 height:25px;
 width:920px;
 float:left;
-margin:17px 0px 0px 5px;
+margin:20px 0px 0px 5px;
 background-color:rgb(165,190,57);
 }
 
@@ -204,7 +208,7 @@ display:inline;
 height:25px;
 width:920px;
 float:left;
-margin:10px 0px 0px 5px;
+margin:10px 0px 5px 5px;
 background-color:rgb(105,96,74);
 }
 
@@ -284,7 +288,7 @@ margin:0px 0px 5px 8px;
 
 div.postlisttitle
 {
-margin:0px px 0px 4px;
+margin:0px 0px 0px 4px;
 font-weight:bold;
 }
 
@@ -363,7 +367,7 @@ div.postpics/*container div for the post pictures*/
 display:inline;
 width:300px;
 float:left;
-margin:10px 0px 5px 5px;
+margin:5px 0px 5px 5px;
 
 }
 
@@ -400,7 +404,7 @@ div.postcontent/*container div for the post content*/
 {
 width:300px;
 float:left;
-margin:10px 0px 0px 9px;
+margin:5px 0px 0px 9px;
 }
 
 a.backbutton
@@ -411,7 +415,7 @@ a.backbutton
 div.posttitle
 {
 clear:left;
-margin:0px px 0px 0px;
+margin:0px 0px 0px 0px;
 font-weight:bold;
 }
 
@@ -500,7 +504,7 @@ border-bottom:solid 1px rgb(105,96,74);
 clear:left;
 float:left;
 display:inline;
-margin:5px 0px 0px 5px;
+margin:0px 0px 0px 5px;
 padding-bottom:10px;
 }
 

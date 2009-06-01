@@ -6,30 +6,26 @@ package com.atomyk.wardcoop
 class Person {
 	static transients = ['pass']
 	static hasMany = [authorities: Authority, posts: Post]
-	static belongsTo = Authority
-
-	/** Username */
-	String username
-	/** User Real Name*/
-	String userRealName
+	static belongsTo = [ward:Ward]
+	
+	String firstName
+	String lastName
 	/** MD5 Password */
 	String passwd
 	/** enabled */
 	boolean enabled
-
 	String email
-	boolean emailShow
+	String telephone
 
-	/** description */
-	String description = ''
 
 	/** plain password to create a MD5 password */
 	String pass = '[secret]'
 
 	static constraints = {
-		username(blank: false, unique: true)
-		userRealName(blank: false)
-		passwd(blank: false)
+		email(blank: false, email:true, unique:true)
+		firstName(blank: false)
+		lastName(blank: false)
+		passwd(blank: false, minLength:6)
 		enabled()
 	}
 }

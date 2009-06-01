@@ -30,8 +30,13 @@ environments {
 	}
 	production {
 		dataSource {
+			//dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+			//url = "jdbc:hsqldb:mem:devDB"
 			dbCreate = "update"
-			url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+			url = "jdbc:mysql://localhost/wardcoop"
+			driverClassName = "com.mysql.jdbc.Driver"
+			username = "root"
+			password = ""
 		}
 	}
 }

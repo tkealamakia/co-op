@@ -1,110 +1,54 @@
+<html>
 <head>
-	<meta name="layout" content="main" />
-	<title>Edit Person</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="layout" content="main" />
 </head>
-
 <body>
-
-	<g:render template="/templates/menu"/>
-
-	<div class="body">
-		<h1>Edit Person</h1>
-		<g:if test="${flash.message}">
-		<div class="message">${flash.message}</div>
-		</g:if>
-		<g:hasErrors bean="${person}">
-		<div class="errors">
-			<g:renderErrors bean="${person}" as="list" />
-		</div>
-		</g:hasErrors>
-
-		<div class="prop">
-			<span class="name">ID:</span>
-			<span class="value">${person.id}</span>
-		</div>
-
-		<g:form>
-			<input type="hidden" name="id" value="${person.id}" />
-			<input type="hidden" name="version" value="${person.version}" />
-			<div class="dialog">
-				<table>
-				<tbody>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="username">Login Name:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'username','errors')}">
-							<input type="text" id="username" name="username" value="${person.username?.encodeAsHTML()}"/>
-						</td>
-					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="userRealName">Full Name:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'userRealName','errors')}">
-							<input type="text" id="userRealName" name="userRealName" value="${person.userRealName?.encodeAsHTML()}"/>
-						</td>
-					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="passwd">Password:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'passwd','errors')}">
-							<input type="password" id="passwd" name="passwd" value="${person.passwd?.encodeAsHTML()}"/>
-						</td>
-					</tr>
-
-					<!--
-					<tr class="prop">
-						<td valign="top" class="name"><label for="enabled">Enabled:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'enabled','errors')}">
-							<g:checkBox name="enabled" value="${person.enabled}"/>
-						</td>
-					</tr>
-					-->
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="description">Description:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'description','errors')}">
-							<input type="text" id="description" name="description" value="${person.description?.encodeAsHTML()}"/>
-						</td>
-					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="email">Email:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'email','errors')}">
-							<input type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
-						</td>
-					</tr>
-
-					<!--
-					<tr class="prop">
-						<td valign="top" class="name"><label for="emailShow">Show Email:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'emailShow','errors')}">
-							<g:checkBox name="emailShow" value="${person.emailShow}"/>
-						</td>
-					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="authorities">Roles:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'authorities','errors')}">
-							<ul>
-							<g:each var="entry" in="${roleMap}">
-								<li>${entry.key.authority.encodeAsHTML()}
-									<g:checkBox name="${entry.key.authority}" value="${entry.value}"/>
-								</li>
-							</g:each>
-							</ul>
-						</td>
-					</tr>
-					-->
-
-				</tbody>
-				</table>
+<!--Beginning of code for the title bar-->
+		<div class="titlebar">
+				<div class="title">My Account
+				</div>
+				<div class="emailpreferences">
+					<a class="white" href="emailalerts.html">Email Preferences</a>
+				</div>
 			</div>
-
-			<div class="buttons">
-				<span class="button"><g:actionSubmit class="save" value="Update" /></span>
+		<div class="leftarea">
+			<div class="createpost">
+				<g:if test="${flash.message}">
+				<div class="message">${flash.message}</div>
+				</g:if>
+				<g:hasErrors bean="${person}">
+				<div class="errors">
+					<g:renderErrors bean="${person}" as="list" />
+				</div>
+				</g:hasErrors>
+				<g:form class="leftside" action="update">
+					<input type="hidden" name="id" value="${person.id}" />
+					<input type="hidden" name="version" value="${person.version}" />
+					<p class="posttitle">Email Address</p>
+					<input class="createpost" type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
+					<p class="posttitle">First Name</p>
+					<input class="createpost" type="text" id="firstName" name="firstName" value="${person.firstName?.encodeAsHTML()}"/>
+					<p class="posttitle">Last Name</p>
+					<input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
+					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
+					<input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
+					<p class="posttitle">Ward</p>
+					<p class="topmargin">${person?.ward?.name}&nbsp; <g:link controller="ward" action="list" class="blacklink">Change</g:link></p>
+					<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
+					<a class="cancel" href="/wardcoop"><img src="/wardcoop/images/cancel.gif" /></a>
+				</g:form>
 			</div>
-
-		</g:form>
-
+		</div>
+<!--Beginning of code for the advertising area on the right-->
+<!--
+		<div class="adsright">
+		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		</div>
+-->
 	</div>
+
 </body>
+</html>

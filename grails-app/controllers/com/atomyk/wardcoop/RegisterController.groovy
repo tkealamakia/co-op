@@ -105,14 +105,10 @@ class RegisterController {
 			}
 		}
 
-		person.userRealName = params.userRealName
+		//person.userRealName = params.userRealName
+		person.firstName = params.firstName
+		person.lastName = params.lastName
 		person.email = params.email
-		if (params.emailShow) {
-			person.emailShow = true
-		}
-		else {
-			person.emailShow = false
-		}
 
 		if (person.save()) {
 			redirect action: show, id: person.id
@@ -161,11 +157,16 @@ class RegisterController {
 			return
 		}
 
+		if (params.passwd.length() < 6) {
+			flash.message = 'The password you entered must be at least 6 characters.'
+			render view: 'index', model: [person: person]
+			return
+		}
 		def pass = authenticateService.encodePassword(params.passwd)
 		person.passwd = pass
 		person.enabled = true
-		person.emailShow = true
-		person.description = ''
+		def ward = Ward.findByName('Default')
+		person.ward = ward
 		if (person.save()) {
 			role.addToPeople(person)
 			if (config.security.useMail) {
@@ -175,9 +176,9 @@ class RegisterController {
 
  Here are the details of your account:
  -------------------------------------
- LoginName: ${person.username}
  Email: ${person.email}
- Full Name: ${person.userRealName}
+ First Name: ${person.firstName}
+ Last Name: ${person.lastName}
  Password: ${params.passwd}
 """
 
@@ -191,7 +192,7 @@ class RegisterController {
 
 			person.save(flush: true)
 
-			def auth = new AuthToken(person.username, params.passwd)
+			def auth = new AuthToken(person.email, params.passwd)
 			def authtoken = daoAuthenticationProvider.authenticate(auth)
 			SCH.context.authentication = authtoken
 			redirect uri: '/'

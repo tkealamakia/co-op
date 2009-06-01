@@ -17,8 +17,8 @@ class PostController {
     def listByUser = {
         // Get current user
         def user = authenticateService.principal() 
-        def username = user?.getUsername()
-        def person = Person.findByUsername(username)
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
         
         def postList = Post.findAllByPerson(person)
         if (postList == null) {
@@ -108,8 +108,8 @@ class PostController {
         
         // Get current user
         def user = authenticateService.principal() 
-        def username = user?.getUsername()
-        def person = Person.findByUsername(username)
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
         postInstance.person = person
         
         def category = Category.findByName("For Sale")

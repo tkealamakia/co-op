@@ -26,18 +26,17 @@
 			<div class="dialog">
 			<table>
 				<tbody>
-				<tr class='prop'>
-					<td valign='top' class='name'><label for='username'>Login Name:</label></td>
-					<td valign='top' class='value ${hasErrors(bean:person,field:'username','errors')}'>
-						<input type="hidden" name='username' value="${person.username?.encodeAsHTML()}"/>
-						<div style="margin:3px">${person.username?.encodeAsHTML()}</div>
-					</td>
-				</tr>
 
 				<tr class='prop'>
-					<td valign='top' class='name'><label for='userRealName'>Full Name:</label></td>
-					<td valign='top' class='value ${hasErrors(bean:person,field:'userRealName','errors')}'>
-						<input type="text" name='userRealName' value="${person.userRealName?.encodeAsHTML()}"/>
+					<td valign='top' class='name'><label for='firstName'>First Name:</label></td>
+					<td valign='top' class='value ${hasErrors(bean:person,field:'firstName','errors')}'>
+						<input type="text" name='firstName' value="${person.firstName?.encodeAsHTML()}"/>
+					</td>
+				</tr>
+				<tr class='prop'>
+					<td valign='top' class='name'><label for='lastName'>Last Name:</label></td>
+					<td valign='top' class='value ${hasErrors(bean:person,field:'lastName','errors')}'>
+						<input type="text" name='lastName' value="${person.lastName?.encodeAsHTML()}"/>
 					</td>
 				</tr>
 

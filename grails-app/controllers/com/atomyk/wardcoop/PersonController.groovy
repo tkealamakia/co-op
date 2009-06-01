@@ -44,8 +44,8 @@ class PersonController {
 	def show = {
         // Get current user
         def user = authenticateService.principal() 
-        def username = user?.getUsername()
-        def person = Person.findByUsername(username)
+        def email = user?.getEmail()
+        def person = Person.findByEmail(email)
         
 		if (!person) {
 			flash.message = "Person not found with id $params.id"
@@ -81,8 +81,18 @@ class PersonController {
 	 */
 
 	def edit = {
+        // Get current user
+        def user = authenticateService.principal() 
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
+        
+        // This means we are returning from a ward selection page
+	    if (params.id != null) {
+	        def ward = Ward.findById(params.id)
+	        person.ward = ward
+	        person.save()
+	    }
 
-		def person = Person.get(params.id)
 		if (!person) {
 			flash.message = "Person not found with id $params.id"
 			redirect action: list
@@ -120,7 +130,9 @@ class PersonController {
 		if (person.save()) {
 			Authority.findAll().each { it.removeFromPeople(person) }
 			addRoles(person)
-			redirect action: show, id: person.id
+			flash.message = "Account updated."
+			//redirect action: edit, id: person.id
+			render view: 'edit', model: buildPersonModel(person)
 		}
 		else {
 			render view: 'edit', model: buildPersonModel(person)

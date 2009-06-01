@@ -25,12 +25,6 @@
 				<table>
 				<tbody>
 
-					<tr class="prop">
-						<td valign="top" class="name"><label for="username">Login Name:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'username','errors')}">
-							<input type="text" id="username" name="username" value="${person.username?.encodeAsHTML()}"/>
-						</td>
-					</tr>
 
 					<tr class="prop">
 						<td valign="top" class="name"><label for="userRealName">Full Name:</label></td>

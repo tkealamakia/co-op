@@ -17,35 +17,36 @@
 		</div>
 		<div class="leftarea">
 			<div class="createpost">
+
 					<div class="leftcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<img src="images/categorytile.gif" /> 
+						<a href="category.html"><img src="images/categorytile.gif" /> </a>
 					</div>
 			</div>
 <!--Beginning of code for the advertising area on the right-->

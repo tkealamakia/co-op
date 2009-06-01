@@ -21,7 +21,7 @@
 				<div class="linkbox">
 					<div class="toplinksleft">
 						<g:link class="white" controller="post" action="create">Create New Post</g:link><br />
-						<g:link class="white" controller="person" action="show">My Account</g:link><br />
+						<g:link class="white" controller="person" action="edit">My Account</g:link><br />
 						<g:link class="white" controller="post" action="listByUser">My Posts</g:link><br />
 						<g:link class="white" controller="logout">Sign Out</g:link>
 					</div>
