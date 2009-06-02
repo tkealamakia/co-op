@@ -20,7 +20,8 @@
             <g:each in="${postInstanceList}" status="i" var="postInstance">
 			<div class="postlineitem">
 				<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="images/nopicture.gif" /></g:link>
-				<div class="editdelete"><g:link class="brownlink" action="edit">Edit</g:link><br /><g:link class="brownlink" action="delete">Delete</g:link>
+				<div class="editdelete"><g:link class="brownlink" action="edit" id="${postInstance.id}">Edit</g:link><br />
+				<g:link class="brownlink" onclick="return confirm('Are you sure?');" action="delete" id="${postInstance.id}">Delete</g:link>
 				</div>
 				<div class="postlistcontent">
 					<div class="postlisttitle"><g:link class="posttitle" action="edit">${fieldValue(bean:postInstance, field:'title')}</g:link>

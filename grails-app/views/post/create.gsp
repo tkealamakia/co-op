@@ -20,18 +20,8 @@
 	            </g:hasErrors>
 				<g:form class="leftside" action="save" method="post">
 					<p class="posttitle">Category*</p>
-					<select class="toppad" name="posttype">
-					<option value="freestuff">Free Stuff</option>
-					<option value="forsale">For Sale</option>
-					<option value="forrent">For Rent</option>
-					<option value="trade">Trade</option>
-					<option value="forhire">For Hire</option>
-					<option value="jobshiring">Jobs / Hiring</option>
-					<option value="forborrow">For Borrow</option>
-					<option value="itemswanted">Items Wanted</option>
-					<option value="helprequest">Help Request</option>
-					<option value="events">Events</option>
-					</select>
+					<g:select class="toppad" name="category.id" from="${com.atomyk.wardcoop.Category.list()}"
+						optionKey="id" optionValue="name" value="${postInstance?.category?.id}"/>
 					<p class="posttitle">Title*</p>
                     <input class="createpost" type="text" id="title" name="title" value="${fieldValue(bean:postInstance,field:'title')}"/>
 					<p class="posttitle"> Asking Price*</p>
@@ -44,7 +34,7 @@
 					<p class="topmargin">potsandpans.jpg &nbsp; <a href="remove.html" class="blacklink">Remove</a></p>
 					<p class="topmargin"><a class="blacklink" href="addphoto.html">Add Another Photo</a></p>
 					<input class="savenewpost" type="image" src="../images/save.gif" /> 
-					<a class="cancel" href="cancel.html"><img src="../images/cancel.gif" /></a>
+					<g:link class="cancel" action="listByUser"><img src="../images/cancel.gif" /></g:link>
 				</g:form>
 			</div>
 			<div class="rightside">

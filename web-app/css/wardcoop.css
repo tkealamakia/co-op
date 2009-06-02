@@ -42,9 +42,9 @@ color:rgb(165,190,57);
 
 div.container
 {
-0background-image: url(images/grid.gif);
+/*background-image: url(images/grid.gif);*/
 width:930px;
-height: 2000px;
+/*height: 2000px;*/
 margin:0 auto;
 font-size:11pt;
 }
