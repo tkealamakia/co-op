@@ -13,6 +13,7 @@ class Post {
     String description
     String price
     String phone
+    Date postDate
     
 
     

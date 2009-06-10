@@ -53,8 +53,8 @@ div.footer
 {
 float:left;
 display:inline;
-width:910px;
-margin:20px 0px 0px 5px;
+width:920px;
+margin:20px 0px 10px 5px;
 padding:5px 0px 0px 0px;
 border-top:solid 1px rgb(165,190,57);
 }
@@ -84,13 +84,13 @@ div.logotextwardname
 {
 position:absolute;
 float:left;
-margin:0px 0px 0px 154px;
+margin:0px 0px 0px 104px;
 }
 
 div.logotext
 {
 float:left;
-font-size: 18pt;
+font-size: 20pt;
 font-style: italic;
 }
 
@@ -120,6 +120,7 @@ background-color: rgb(105,96,74);
 
 div.toplinksleft
 {
+display:inline;
 float:left;
 margin:1px 0px 0px 5px;
 line-height:1.4;
@@ -141,8 +142,16 @@ div.toplinksright a:hover
 color:rgb(165,190,57);
 }
 
+div.byinvitation
+{
+color:white;
+font-weight:bold;
+margin:2px 0px 0px 155px;
+}
+
 div.byinvitationonly
 {
+color:white;
 font-weight:bold;
 }
 /*Beginning of styles for the navigation bar*/
@@ -198,14 +207,18 @@ div.leftarea/*CONTAINER DIV FOR MAIN LEFT AREA*/
 {
 float:left;
 width:615px;
-margin:0px 0px 0px 0px;
+}
+
+form.leftside
+{
+
 }
 
 /*Beginning of styles for the title bar*/
 div.titlebar
 {
 display:inline;
-height:25px;
+height:26px;
 width:920px;
 float:left;
 margin:10px 0px 5px 5px;
@@ -215,8 +228,8 @@ background-color:rgb(105,96,74);
 div.title
 {
 float:left;
-padding:3px 0px 0px 5px;
-
+padding:4px 0px 0px 5px;
+font-weight:bold;
 color:white;
 }
 
@@ -224,14 +237,14 @@ div.searchbox
 {
 display:inline;
 float:left;
-margin:4px 0px 0px 552px;
+margin:4px 0px 0px 544px;
 }
 
 div.searchbox2
 {
 display:inline;
 float:left;
-margin:4px 0px 0px 547px;
+margin:4px 0px 0px 537px;
 }
 
 form.searchbox
@@ -241,16 +254,10 @@ display:inline;
 
 input.searchbox
 {
+border:solid 1px rgb(165,190,57);
 vertical-align:top;
-border:0 none;
-width:233px;
-margin:0px 0px 0px 0px;
-}
-
-.searchbutton
-{
-border:0 none;
-margin:0px 0px 0px 0px;
+width:236px;
+margin:-1px 0px 0px 0px;
 }
 
 /*Beginning of styles for post line items*/
@@ -283,7 +290,7 @@ div.postlistcontent
 {
 float:left;
 width:452px;
-margin:0px 0px 5px 8px;
+margin:0px 0px 5px 3px;
 }
 
 div.postlisttitle
@@ -340,7 +347,7 @@ div.adsright
 width:300px;
 padding:0;
 float:left;
-margin: 10px 0px 0px 10px;
+margin: 5px 0px 0px 10px;
 }
 
 img.topad
@@ -547,10 +554,66 @@ width:238px;
 margin:10px 0px 0px 0px;
 }
 
+div.loginfields
+{
+display:inline;
+float:right;
+margin:0px 5px 0px 0px;
+}
+
+div.logintext
+{
+display:inline;
+float:left;
+margin:0px 0px 0px 5px;
+}
+
+p.logintext1
+{
+color:white;
+margin:6px 0px 0px 0px;
+}
+
+p.logintext2
+{
+color:white;
+margin:8px 0px 0px 0px;
+}
+
+input.loginbutton
+{
+float:left;
+margin:0px 0px 0px 0px;
+}
+
+input.loginfield
+{
+background-color:white;
+border:solid 1px rgb(165,190,57);
+width:138px;
+margin:5px 0px 0px 0px;
+}
+
+div.loginlinks
+{
+margin:5px 0px 0px 0px;
+}
+
+div.forgot
+{
+float:left;
+margin:1px 0px 0px 30px;
+}
+
 input.wardsearch
 {
 vertical-align:middle;
 margin:-2px 0px 0px 0px;
+}
+
+input.searchbutton
+{
+margin-top:-1px;
 }
 
 textarea.createpost
@@ -558,6 +621,13 @@ textarea.createpost
 border:solid 1px rgb(105,96,74);
 width:297px;
 height:200px;
+}
+
+textarea.emailaddress
+{
+border:solid 1px rgb(105,96,74);
+width:610px;
+height:168px;
 }
 
 p.topmargin
@@ -588,7 +658,7 @@ div.emailpreferences
 {
 float:left;
 display:inline;
-margin:3px 0px 0px 713px;
+margin:3px 0px 0px 708px;
 }
 
 p.searchresults
@@ -634,6 +704,5 @@ clear:left;
 
 div.emailexplanation
 {
-float:left;
-margin:10px 0px 0px 0px;
+margin:5px 0px 0px 0px;
 }

@@ -37,7 +37,23 @@ class PostController {
             flash.message = "Post not found with id ${params.id}"
             redirect(action:list)
         }
-        else { return [ postInstance : postInstance ] }
+        else { 
+            
+            def imageList = postInstance.images.toArray().sort { it.type }.reverse()
+            def imageArray = [null, null, null]
+            imageList.each {
+                if (it.type == 'imageMain') {
+                    imageArray[0] = it
+                }
+                else if (it.type == 'image2') {
+                    imageArray[1] = it
+                }
+                else if (it.type == 'image3') {
+                    imageArray[2] = it
+                }
+            }
+            return [ postInstance : postInstance , imageList : imageArray] 
+        }
     }
 
     def delete = {
@@ -163,6 +179,7 @@ class PostController {
 
     def save = {
         def postInstance = new Post(params)
+        postInstance.postDate = new Date()
         
         // Get current user
         def user = authenticateService.principal() 

@@ -10,7 +10,7 @@ class MenuTagLib {
         out << "<div class=\"navigationlinks\">"
         out << "<ul class=\"navigation\">"
         Category.findAll().each {
-            out << "<li><a href=\"/wardcoop/post/list\">${it.name}</a></li>"
+            out << "<li><a href=\"/wardcoop/post/listByUser\">${it.name}</a></li>"
         }
         out << "</ul>"
         out << "</div>"
