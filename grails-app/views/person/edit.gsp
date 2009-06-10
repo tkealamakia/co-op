@@ -48,7 +48,6 @@
 		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
 		</div>
 -->
-	</div>
 
 </body>
 </html>

@@ -19,7 +19,19 @@
             
             <g:each in="${postInstanceList}" status="i" var="postInstance">
 			<div class="postlineitem">
-				<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="images/nopicture.gif" /></g:link>
+				<% def foundMainPhoto = false %>
+            	<g:if test="${postInstance.images.size() > 0}">
+		            <g:each in="${postInstance.images}" status="j" var="image">
+		            	<g:if test="${image.type == 'imageMain'}">
+		            		<% foundMainPhoto = true %>
+			                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:image.id)}"/>
+						</g:if>
+	                </g:each>
+                </g:if>
+                <% if (foundMainPhoto == false) { %>
+					<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="images/nopicture.gif" /></g:link>
+				<% } %>
+                
 				<div class="editdelete"><g:link class="brownlink" action="edit" id="${postInstance.id}">Edit</g:link><br />
 				<g:link class="brownlink" onclick="return confirm('Are you sure?');" action="delete" id="${postInstance.id}">Delete</g:link>
 				</div>

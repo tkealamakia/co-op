@@ -18,7 +18,7 @@
 	                <g:renderErrors bean="${postInstance}" as="list" />
 	            </div>
 	            </g:hasErrors>
-				<g:form class="leftside" action="save" method="post">
+				<g:form class="leftside" action="save" method="post" enctype="multipart/form-data">
 					<p class="posttitle">Category*</p>
 					<g:select class="toppad" name="category.id" from="${com.atomyk.wardcoop.Category.list()}"
 						optionKey="id" optionValue="name" value="${postInstance?.category?.id}"/>
@@ -30,9 +30,14 @@
                     <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
 					<p class="posttitle">Contact Telephone Number* &#40xxx-xxx-xxxx&#41</p>
                     <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
-					<p class="posttitle">Upload Main Photo &nbsp; <a class="blacklink" href="browse.html">Browse</a></p>
-					<p class="topmargin">potsandpans.jpg &nbsp; <a href="remove.html" class="blacklink">Remove</a></p>
-					<p class="topmargin"><a class="blacklink" href="addphoto.html">Add Another Photo</a></p>
+                    
+					<p class="posttitle">Upload Main Photo</p>
+                    <input type="file" id="image" name="imageMain.image" />
+					<p class="posttitle">Upload Additional Photo</p>
+                    <input type="file" id="image" name="image2.image" />
+					<p class="posttitle">Upload Additional Photo</p>
+                    <input type="file" id="image" name="image3.image" />
+					
 					<input class="savenewpost" type="image" src="../images/save.gif" /> 
 					<g:link class="cancel" action="listByUser"><img src="../images/cancel.gif" /></g:link>
 				</g:form>

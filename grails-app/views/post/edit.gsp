@@ -6,7 +6,7 @@
 <body>
 <!--Beginning of code for the title bar-->
 		<div class="titlebar">
-				<div class="title">Create New Post</div>
+				<div class="title">Edit Post</div>
 		</div>
 		<div class="leftarea">
 			<div class="createpost">
@@ -18,7 +18,7 @@
 	                <g:renderErrors bean="${postInstance}" as="list" />
 	            </div>
 	            </g:hasErrors>
-				<g:form class="leftside" action="update" method="post">
+				<g:form class="leftside" action="update" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${postInstance.id}"/>
 					<input type="hidden" name="version" value="${postInstance.version}" />
 					<p class="posttitle">Category*</p>
@@ -32,11 +32,40 @@
                     <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
 					<p class="posttitle">Contact Telephone Number* &#40xxx-xxx-xxxx&#41</p>
                     <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
-					<p class="posttitle">Upload Main Photo &nbsp; <a class="blacklink" href="browse.html">Browse</a></p>
-					<p class="topmargin">potsandpans.jpg &nbsp; <a href="remove.html" class="blacklink">Remove</a></p>
-					<p class="topmargin"><a class="blacklink" href="addphoto.html">Add Another Photo</a></p>
-					<input class="savenewpost" type="image" src="../images/save.gif" /> 
-					<g:link class="cancel" action="listByUser"><img src="../images/cancel.gif" /></g:link>
+                    
+	                <br><br>
+	                
+	            	<g:if test="${imageList[0] != null}">
+		                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[0].id)}"/>
+						<p class="topmargin"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[0].id}">Remove</g:link></p>
+		                <br><br><br>
+            		</g:if>
+            		<g:else>
+						<p class="posttitle">Upload Main Photo</p>
+	                    <input type="file" id="image" name="imageMain.image" />
+            		</g:else>
+	            	<g:if test="${imageList[1] != null}">
+		                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[1].id)}"/>
+						<p class="topmargin"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[1].id}">Remove</g:link></p>
+		                <br><br><br>
+            		</g:if>
+            		<g:else>
+						<p class="posttitle">Upload Additional Photo</p>
+	                    <input type="file" id="image" name="image2.image" />
+            		</g:else>
+	            	<g:if test="${imageList[2] != null}">
+		                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[2].id)}"/>
+						<p class="topmargin"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[2].id}">Remove</g:link></p>
+		                <br><br><br>
+            		</g:if>
+            		<g:else>
+						<p class="posttitle">Upload Additional Photo</p>
+	                    <input type="file" id="image" name="image3.image" />
+            		</g:else>
+                     
+                    <br>
+					<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
+					<g:link class="cancel" action="listByUser"><img src="/wardcoop/images/cancel.gif" /></g:link>
 				</g:form>
 			</div>
 			<div class="rightside">

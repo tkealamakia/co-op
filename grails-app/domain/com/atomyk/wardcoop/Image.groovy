@@ -12,5 +12,6 @@ class Image {
     */
     
     byte[] image
+    String type
     
 }

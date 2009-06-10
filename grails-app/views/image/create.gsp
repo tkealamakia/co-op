@@ -35,14 +35,6 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="post">Post:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:imageInstance,field:'post','errors')}">
-                                    <g:select optionKey="id" from="${Post.list()}" name="post.id" value="${imageInstance?.post?.id}" ></g:select>
-                                </td>
-                            </tr> 
                         
                         </tbody>
                     </table>

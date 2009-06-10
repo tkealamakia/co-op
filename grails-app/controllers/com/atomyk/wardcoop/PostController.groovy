@@ -55,10 +55,30 @@ class PostController {
             }
         }
         else {
-        println "check3"
             flash.message = "Post not found with id ${params.id}"
             redirect(action:listByUser)
         }
+    }
+    
+    def deleteImage = {
+        def imageInstance = Image.get( params.id )
+        def post = imageInstance.post
+        if(imageInstance) {
+            try {
+                imageInstance.delete(flush:true)
+                flash.message = "Image ${params.id} deleted"
+                redirect(action:edit, id:post.id)
+            }
+            catch(org.springframework.dao.DataIntegrityViolationException e) {
+                flash.message = "Image ${params.id} could not be deleted"
+                redirect(action:edit,id:post.id)
+            }
+        }
+        else {
+            flash.message = "Image not found with id ${params.id}"
+            redirect(action:edit, id:post.id)
+        }
+        
     }
 
     def edit = {
@@ -69,7 +89,22 @@ class PostController {
             redirect(action:list)
         }
         else {
-            return [ postInstance : postInstance ]
+            def imageList = postInstance.images.toArray().sort { it.type }.reverse()
+            def imageArray = [null, null, null]
+            imageList.each {
+                if (it.type == 'imageMain') {
+                    imageArray[0] = it
+                }
+                else if (it.type == 'image2') {
+                    imageArray[1] = it
+                }
+                else if (it.type == 'image3') {
+                    imageArray[2] = it
+                }
+            }
+            
+            //def imageList = postInstance.images.toArray()
+            return [ postInstance : postInstance , imageList : imageArray]
         }
     }
 
@@ -86,7 +121,27 @@ class PostController {
                 }
             }
             postInstance.properties = params
-            if(!postInstance.hasErrors() && postInstance.save()) {
+	        if(!postInstance.hasErrors() && postInstance.save()) {
+	            
+		        def imageMain = new Image(params["imageMain"])
+		        imageMain.type = "imageMain"
+		        def image2 = new Image(params["image2"])
+		        image2.type = "image2"
+		        def image3 = new Image(params["image3"])
+		        image3.type = "image3"
+		        if (imageMain?.image?.length > 0) {
+			        imageMain.post = postInstance
+		            imageMain.save()
+		        }
+		        if (image2?.image?.length > 0) {
+			        image2.post = postInstance
+		            image2.save()
+		        }
+		        if (image3?.image?.length > 0) {
+			        image3.post = postInstance
+		            image3.save()
+		        }
+		            
                 flash.message = "Post ${params.id} updated"
                 redirect(action:listByUser,id:postInstance.id)
             }
@@ -119,8 +174,29 @@ class PostController {
         postInstance.category = category
         
         if(!postInstance.hasErrors() && postInstance.save()) {
+            
+	        def imageMain = new Image(params["imageMain"])
+	        imageMain.type = "imageMain"
+	        def image2 = new Image(params["image2"])
+	        image2.type = "image2"
+	        def image3 = new Image(params["image3"])
+	        image3.type = "image3"
+	        if (imageMain.image.length > 0) {
+		        imageMain.post = postInstance
+	            imageMain.save()
+	        }
+	        if (image2.image.length > 0) {
+			        image2.post = postInstance
+		            image2.save()
+	        }
+	        if (image3.image.length > 0) {
+			        image3.post = postInstance
+		            image3.save()
+	        }
+	            
             flash.message = "Post ${postInstance.id} created"
             redirect(action:listByUser)
+            
         }
         else {
             render(view:'create',model:[postInstance:postInstance])
