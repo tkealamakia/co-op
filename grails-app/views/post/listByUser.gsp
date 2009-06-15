@@ -41,7 +41,7 @@
 					<div class="postlisttitle"><g:link class="posttitle" action="edit">${fieldValue(bean:postInstance, field:'title')}</g:link>
 					</div>
 					<div class="postlistdescription">
-                        ${fieldValue(bean:postInstance, field:'description')}
+                        <tags:postChopper value="${fieldValue(bean:postInstance, field:'description')}" />
 					</div>
 					<div class="postlistprice">
                         ${fieldValue(bean:postInstance, field:'price')}

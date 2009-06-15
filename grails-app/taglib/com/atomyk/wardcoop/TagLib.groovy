@@ -2,9 +2,9 @@ package com.atomyk.wardcoop
 
 import com.atomyk.wardcoop.Category
 
-class MenuTagLib {
+class TagLib {
 
-    static namespace = "menu"
+    static namespace = "tags"
     def menuBar = { attrs ->
         out << "<div class=\"navigation\">"
         out << "<div class=\"navigationlinks\">"
@@ -15,6 +15,10 @@ class MenuTagLib {
         out << "</ul>"
         out << "</div>"
         out << "</div>"
+    }
+    
+    def postChopper = { attrs ->
+        out << attrs.value.substring(0, 125)
     }
 
 }

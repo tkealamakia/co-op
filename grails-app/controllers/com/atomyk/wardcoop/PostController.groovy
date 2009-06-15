@@ -38,7 +38,6 @@ class PostController {
             redirect(action:list)
         }
         else { 
-            
             def imageList = postInstance.images.toArray().sort { it.type }.reverse()
             def imageArray = [null, null, null]
             imageList.each {
@@ -162,6 +161,7 @@ class PostController {
                 redirect(action:listByUser,id:postInstance.id)
             }
             else {
+            println "check3"
                 render(view:'edit',model:[postInstance:postInstance])
             }
         }

@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.codehaus.groovy.eclipse.groovyNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>acegi</name>
+			<type>2</type>
+			<location>/Users/tdk/.grails/1.1.1/projects/wardcoop/plugins/acegi-0.5.1/src/groovy/org</location>
+		</link>
+	</linkedResources>
 </projectDescription>

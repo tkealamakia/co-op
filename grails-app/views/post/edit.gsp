@@ -20,12 +20,13 @@
 	            </g:hasErrors>
 				<g:form class="leftside" action="update" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${postInstance.id}"/>
+					<input type="hidden" name="postDate" value="${postInstance.postDate}"/>
 					<input type="hidden" name="version" value="${postInstance.version}" />
 					<p class="posttitle">Category*</p>
 					<g:select class="toppad" name="category.id" from="${com.atomyk.wardcoop.Category.list()}"
 						optionKey="id" optionValue="name" value="${postInstance?.category?.id}"/>
 					<p class="posttitle">Title*</p>
-                    <input class="createpost" type="text" id="title" name="title" value="${fieldValue(bean:postInstance,field:'title')}"/>
+                    <input class="createpost" type="text" id="title" maxlength="50" name="title" value="${fieldValue(bean:postInstance,field:'title')}"/>
 					<p class="posttitle"> Asking Price*</p>
                     <input class="createpost" type="text" id="price" name="price" value="${fieldValue(bean:postInstance,field:'price')}"/>
 					<p class="posttitle">Description*</p>

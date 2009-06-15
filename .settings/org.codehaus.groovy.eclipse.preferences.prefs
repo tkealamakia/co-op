@@ -1,3 +1,3 @@
-#Created by grails
+#Sat Jun 13 08:58:10 MDT 2009
 eclipse.preferences.version=1
-groovy.dont.generate.class.files=true
+groovy.compiler.output.path=bin-groovy

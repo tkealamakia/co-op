@@ -33,7 +33,7 @@
 			</div>
 			<!-- End of the Header -->
 			
-	    	<menu:menuBar/>
+	    	<tags:menuBar/>
 	    	
 	        <g:layoutBody />		
 	        
