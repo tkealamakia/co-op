@@ -18,7 +18,12 @@ class TagLib {
     }
     
     def postChopper = { attrs ->
-        out << attrs.value.substring(0, 125)
+        if (attrs.value.size() > 124) {
+	        out << attrs.value.substring(0, 125)
+        }
+        else {
+            out << attrs.value
+        }
     }
 
 }
