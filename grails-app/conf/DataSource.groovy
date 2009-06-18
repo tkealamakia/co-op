@@ -19,7 +19,7 @@ environments {
 			url = "jdbc:mysql://localhost/wardcoop"
 			driverClassName = "com.mysql.jdbc.Driver"
 			username = "root"
-			password = ""
+			password = "asdfg"
 		}
 	}
 	test {
