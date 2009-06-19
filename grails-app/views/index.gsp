@@ -16,47 +16,48 @@
 			</div>
 		</div>
 		<div class="leftarea">
-			<div class="createpost">
+			<div class="categories">
 
 					<div class="leftcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile1.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile2.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile3.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile4.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile5.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile6.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile7.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile8.gif" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile9.gif" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="images/categorytile.gif" /> </a>
+						<a href="category.html"><img src="images/categorytile10.gif" /> </a>
 					</div>
 			</div>
+		</div>
 <!--Beginning of code for the advertising area on the right-->
-<!--
+
 		<div class="adsright">
 		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
 		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
 		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
 		</div>
--->
+
 	</div>
 
 </body>
