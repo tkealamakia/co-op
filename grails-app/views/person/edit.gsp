@@ -33,21 +33,26 @@
 					<input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
 					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
 					<input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
-					<p class="posttitle">Ward</p>
-					<p class="topmargin">${person?.ward?.name}&nbsp; <g:link controller="ward" action="list" class="blacklink">Change</g:link></p>
-					<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
-					<a class="cancel" href="/wardcoop"><img src="/wardcoop/images/cancel.gif" /></a>
+					<p class="posttitle">Group</p>
+					<p class="notopmargin">${person?.ward?.name}&nbsp; <g:link controller="ward" action="list" class="blacklink">Change</g:link></p>
+					<div class="savecancelbuttons">
+						<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
+						<a class="cancel" href="/wardcoop"><img src="/wardcoop/images/cancel.gif" /></a>
+					</div>
 				</g:form>
+			</div>
+			<div class="rightside">
+				<p class="asterisk">Fields marked with * are required.</p>
 			</div>
 		</div>
 <!--Beginning of code for the advertising area on the right-->
-<!--
+
 		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
--->
+
 
 </body>
 </html>

@@ -31,42 +31,50 @@
                     <input class="createpost" type="text" id="price" name="price" value="${fieldValue(bean:postInstance,field:'price')}"/>
 					<p class="posttitle">Description*</p>
                     <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
-					<p class="posttitle">Contact Telephone Number* &#40xxx-xxx-xxxx&#41</p>
+					<p class="posttitle">Telephone Number* &#40xxx-xxx-xxxx&#41</p>
                     <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
                     
 	                <br><br>
 	                
 	            	<g:if test="${imageList[0] != null}">
-		                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[0].id)}"/>
-						<p class="topmargin"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[0].id}">Remove</g:link></p>
+		                <p class="topmargin"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[0].id)}"/></p>
+						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[0].id}">Remove</g:link></p>
 		                <br><br><br>
             		</g:if>
             		<g:else>
-						<p class="posttitle">Upload Main Photo</p>
-	                    <input type="file" id="image" name="imageMain.image" />
+						<p class="posttitle">Main Photo</p>
+	                    <div class="upload">
+							<input type="file" id="image" name="imageMain.image" />
+						</div>
             		</g:else>
 	            	<g:if test="${imageList[1] != null}">
-		                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[1].id)}"/>
-						<p class="topmargin"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[1].id}">Remove</g:link></p>
+		                <p class="topmargin"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[1].id)}"/></p>
+						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[1].id}">Remove</g:link></p>
 		                <br><br><br>
             		</g:if>
             		<g:else>
 						<p class="posttitle">Upload Additional Photo</p>
-	                    <input type="file" id="image" name="image2.image" />
+	                    <div class="upload">
+							<input type="file" id="image" name="image2.image" />
+						</div>
             		</g:else>
 	            	<g:if test="${imageList[2] != null}">
-		                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[2].id)}"/>
-						<p class="topmargin"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[2].id}">Remove</g:link></p>
+		                <p class="topmargin"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[2].id)}"/></p>
+						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[2].id}">Remove</g:link></p>
 		                <br><br><br>
             		</g:if>
             		<g:else>
 						<p class="posttitle">Upload Additional Photo</p>
-	                    <input type="file" id="image" name="image3.image" />
+	                    <div class="upload">
+							<input type="file" id="image" name="image3.image" />
+						</div>
             		</g:else>
                      
                     <br>
-					<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
-					<g:link class="cancel" action="listByUser"><img src="/wardcoop/images/cancel.gif" /></g:link>
+					<div class="savecancelbuttons">
+						<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
+						<g:link class="cancel" action="listByUser"><img src="/wardcoop/images/cancel.gif" /></g:link>
+					</div>
 				</g:form>
 			</div>
 			<div class="rightside">
@@ -74,13 +82,13 @@
 			</div>
 		</div>
 <!--Beginning of code for the advertising area on the right-->
-<!--
+
 		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
--->
+
 
 </body>
 </html>

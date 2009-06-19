@@ -29,7 +29,7 @@
 	                </g:each>
                 </g:if>
                 <% if (foundMainPhoto == false) { %>
-					<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="images/nopicture.gif" /></g:link>
+					<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="/wardcoop/images/nopicture.gif" /></g:link>
 				<% } %>
                 
 				<div class="editdelete">
@@ -43,8 +43,12 @@
 					<div class="postlistdescription">
                         <tags:postChopper value="${fieldValue(bean:postInstance, field:'description')}" />
 					</div>
-					<div class="postlistprice">
-                        ${fieldValue(bean:postInstance, field:'price')}
+					<div class="postpricedate">
+						<div class="postlistprice">
+							${fieldValue(bean:postInstance, field:'price')}
+						</div>
+						<div class="postdate">May 29, 2009
+						</div>
 					</div>
 				</div>
 			</div>
@@ -54,7 +58,7 @@
             <div class="paginateButtons">
                 <g:paginate total="${postInstanceTotal}" />
             </div>
-			<!--
+			
 			<div class="pagination">
 				<div class="pagenumbers">
 				<a class="white" href="back.html">Back</a>
@@ -82,17 +86,17 @@
 				<a class="white" href="next.html">Next</a>
 				</div>
 			</div>
-			-->
+			
 			
 		</div>
 <!--Beginning of code for the advertising area on the right-->
-<!--
+
 		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
--->
+
 
 </body>
 </html>

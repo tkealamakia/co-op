@@ -6,7 +6,7 @@
 <body>
 <!--Beginning of code for the title bar-->
 		<div class="titlebar">
-				<div class="title">Ward Search</div>
+				<div class="title">Group Search</div>
 		</div>
 		<div class="leftarea">
 			<div class="wardsearch">
@@ -20,19 +20,21 @@
                     </g:each>
 			</div>
 			<div class="createpost">
-					<p class="topmargin">Can't find your ward?</p>
-					<p class="topmargin"><g:link action="create"><img src="../images/createward.gif" /></g:link></p>
-					<p class="topmargin"><g:link controller="person" action="edit"><img src="../images/cancel.gif" /></g:link></p>
+					<p class="topmargin">Can't find your Group?</p>
+					<div class="savecancelbuttons">
+						<p class="topmargin"><g:link action="create"><img src="../images/createward.gif" /></g:link></p>
+						<p class="topmargin"><g:link controller="person" action="edit"><img src="../images/cancel.gif" /></g:link></p>
+					</div>
 			</div>
 		</div>
 <!--Beginning of code for the advertising area on the right-->
-<!--
+
 		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
--->
+
 	</div>
 
 </body>

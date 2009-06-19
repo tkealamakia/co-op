@@ -28,18 +28,25 @@
                     <input class="createpost" type="text" id="price" name="price" value="${fieldValue(bean:postInstance,field:'price')}"/>
 					<p class="posttitle">Description*</p>
                     <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
-					<p class="posttitle">Contact Telephone Number* &#40xxx-xxx-xxxx&#41</p>
+					<p class="posttitle">Telephone Number* &#40xxx-xxx-xxxx&#41</p>
                     <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
                     
 					<p class="posttitle">Upload Main Photo</p>
-                    <input type="file" id="image" name="imageMain.image" />
+                    <div class="upload">
+						<input type="file" id="image" name="imageMain.image" />
+					</div>
 					<p class="posttitle">Upload Additional Photo</p>
-                    <input type="file" id="image" name="image2.image" />
+                    <div class="upload">
+						<input type="file" id="image" name="image2.image" />
+					</div>
 					<p class="posttitle">Upload Additional Photo</p>
-                    <input type="file" id="image" name="image3.image" />
-					
-					<input class="savenewpost" type="image" src="../images/save.gif" /> 
-					<g:link class="cancel" action="listByUser"><img src="../images/cancel.gif" /></g:link>
+                    <div class="upload">
+						<input type="file" id="image" name="image3.image" />
+					</div>
+					<div class="savecancelbuttons">
+						<input class="savenewpost" type="image" src="../images/save.gif" /> 
+						<g:link class="cancel" action="listByUser"><img src="../images/cancel.gif" /></g:link>
+					</div>
 				</g:form>
 			</div>
 			<div class="rightside">
@@ -47,13 +54,13 @@
 			</div>
 		</div>
 <!--Beginning of code for the advertising area on the right-->
-<!--
+
 		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
--->
+
 
 </body>
 </html>

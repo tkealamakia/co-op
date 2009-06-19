@@ -12,7 +12,7 @@
 		<div class="leftarea">
 			<div class="postpics">
 				<div class="bigpicture">
-	                <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
+	                <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
 				</div>
 				<div class="leftsmallpic">
 	                <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[1]?.id)}"/>
@@ -53,12 +53,12 @@
 		</div>
 <!--Beginning of code for the advertising area on the right-->
 
-<!--		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
+		<div class="adsright">
+		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
+		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
+		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
--->
+
 
 
 </body>
