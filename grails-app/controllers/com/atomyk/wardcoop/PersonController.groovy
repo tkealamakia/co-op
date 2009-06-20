@@ -122,17 +122,19 @@ class PersonController {
 			return
 		}
 
+		person.properties = params
+        /* Password change logic
 		def oldPassword = person.passwd
 		person.properties = params
 		if (!params.passwd.equals(oldPassword)) {
 			person.passwd = authenticateService.encodePassword(params.passwd)
 		}
+        */
 		if (person.save()) {
-			Authority.findAll().each { it.removeFromPeople(person) }
-			addRoles(person)
+			//Authority.findAll().each { it.removeFromPeople(person) }
+			//addRoles(person)
 			flash.message = "Account updated."
-			//redirect action: edit, id: person.id
-			render view: 'edit', model: buildPersonModel(person)
+			redirect uri: '/'
 		}
 		else {
 			render view: 'edit', model: buildPersonModel(person)

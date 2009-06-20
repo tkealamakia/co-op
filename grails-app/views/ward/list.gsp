@@ -11,7 +11,7 @@
 		<div class="leftarea">
 			<div class="wardsearch">
 				<g:form class="leftside" action="list">
-					<input class="topcreatepost" type="text" name="wardsearch" value="Enter the full name of your ward here." />
+					<input class="topcreatepost" type="text" name="wardsearch" />
 					<input type="image" class="wardsearch" src="../images/search.gif" />
 				</g:form>
 					<p class="searchresults">Search Results:</p>

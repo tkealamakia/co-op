@@ -25,11 +25,11 @@
 				<g:form class="leftside" action="update">
 					<input type="hidden" name="id" value="${person.id}" />
 					<input type="hidden" name="version" value="${person.version}" />
-					<p class="posttitle">Email Address</p>
+					<p class="posttitle">Email Address*</p>
 					<input class="createpost" type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
-					<p class="posttitle">First Name</p>
+					<p class="posttitle">First Name*</p>
 					<input class="createpost" type="text" id="firstName" name="firstName" value="${person.firstName?.encodeAsHTML()}"/>
-					<p class="posttitle">Last Name</p>
+					<p class="posttitle">Last Name*</p>
 					<input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
 					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
 					<input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>

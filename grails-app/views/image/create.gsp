@@ -18,7 +18,7 @@
             </g:if>
             <g:hasErrors bean="${imageInstance}">
             <div class="errors">
-                <g:renderErrors bean="${imageInstance}" as="list" />
+				<g:renderErrors bean="${imageInstance}" as="list" />
             </div>
             </g:hasErrors>
             <g:form action="save" method="post"  enctype="multipart/form-data">

@@ -1,2 +1,4 @@
-out
 stacktrace.log
+bin-groovy*
+config
+.settings*
