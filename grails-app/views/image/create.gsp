@@ -34,8 +34,6 @@
                                     <input type="file" id="image" name="image" />
                                 </td>
                             </tr> 
-                        
-                        
                         </tbody>
                     </table>
                 </div>
