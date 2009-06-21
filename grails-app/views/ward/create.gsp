@@ -21,7 +21,7 @@
 	            </g:hasErrors>
 				<div class="emailexplanation">Enter the full name of your group in the box below. Make sure to be as acurate as possible so that others searching for your group can find it.</div>
 				<g:form class="leftside" action="save" method="post">
-					<input class="topcreatepost" type="text" name="wardsearch" value="Enter the full name of your group here." />
+					<input class="topcreatepost" type="text" name="name" value="Enter the full name of your group here." />
 
 					<input type="image" class="wardsearch" src="${resource(dir:'images', file:'createward.gif')}" />
 				</g:form>

@@ -4,19 +4,18 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-        <!--Beginning of code for the title bar-->
 		<div class="titlebar">
             <div class="title">Edit Post</div>
 		</div>
 		<div class="leftarea">
 			<div class="createpost">
 	            <g:if test="${flash.message}">
-	            <div class="message">${flash.message}</div>
+                    <div class="message">${flash.message}</div>
 	            </g:if>
 	            <g:hasErrors bean="${postInstance}">
-	            <div class="errors">
-	                <g:renderErrors bean="${postInstance}" as="list" />
-	            </div>
+                    <div class="errors">
+                        <g:renderErrors bean="${postInstance}" as="list" />
+                    </div>
 	            </g:hasErrors>
 				<g:form class="leftside" action="update" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${postInstance.id}"/>

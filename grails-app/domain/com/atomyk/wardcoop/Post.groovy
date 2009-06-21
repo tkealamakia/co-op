@@ -15,6 +15,11 @@ class Post {
     String phone
     Date postDate
     
+	static constraints = {
+		title(blank: false)
+		description(blank: false)
+		phone(blank: false)
+	}
 
     
     

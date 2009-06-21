@@ -33,6 +33,19 @@ class PostController {
     def show = {
         def postInstance = Post.get( params.id )
 
+        // Disallow people outsite the group to view group posts
+        def user = authenticateService.principal()
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
+        def userGroup = person.ward.name
+        def postUserGroup = postInstance?.person?.ward?.name
+
+        if(userGroup != postUserGroup) {
+            flash.message = "You are not allowed to view this post"
+            redirect(action:listByUser)
+        }
+
+
         if(!postInstance) {
             flash.message = "Post not found with id ${params.id}"
             redirect(action:list)
@@ -56,8 +69,23 @@ class PostController {
     }
 
     def delete = {
-        //TODO only allow current user to delete their own posts
         def postInstance = Post.get( params.id )
+
+        //Only allow current user to delete their own posts
+        def user = authenticateService.principal()
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
+
+        println person.id
+        println postInstance?.person?.id
+        if(person.id != postInstance?.person?.id) {
+            println "in here"
+            flash.message = "You are not allowed to perform this operation"
+            //TODO figure a better way to handle this.  For some reason
+            // a redirect is still deleting the post!
+            return
+        }
+
         if(postInstance) {
             try {
                 postInstance.delete(flush:true)
@@ -162,7 +190,9 @@ class PostController {
                 redirect(action:listByUser,id:postInstance.id)
             }
             else {
-            println "check3"
+                println "check1"
+                //TODO Fix the error page that is produced on an edit
+                // when required fields are not provided.
                 render(view:'edit',model:[postInstance:postInstance])
             }
         }
@@ -212,7 +242,7 @@ class PostController {
 		            image3.save()
 	        }
 	            
-            flash.message = "Post ${postInstance.id} created"
+            flash.message = "Your post was successfully created"
             redirect(action:listByUser)
             
         }

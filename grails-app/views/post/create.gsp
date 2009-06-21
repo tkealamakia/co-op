@@ -4,7 +4,6 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-<!--Beginning of code for the title bar-->
 		<div class="titlebar">
             <div class="title">Create New Post</div>
 		</div>
@@ -23,13 +22,19 @@
 					<g:select class="toppad" name="category.id" from="${com.atomyk.wardcoop.Category.list()}"
 						optionKey="id" optionValue="name" value="${postInstance?.category?.id}"/>
 					<p class="posttitle">Title*</p>
-                    <input class="createpost" type="text" id="title" maxlength="50" name="title" value="${fieldValue(bean:postInstance,field:'title')}"/>
+                    <span class="value ${hasErrors(bean:postInstance,field:'title','errors')}">
+                        <input class="createpost" type="text" id="title" maxlength="50" name="title" value="${fieldValue(bean:postInstance,field:'title')}"/>
+                    </span>
 					<p class="posttitle"> Asking Price*</p>
                     <input class="createpost" type="text" id="price" name="price" value="${fieldValue(bean:postInstance,field:'price')}"/>
 					<p class="posttitle">Description*</p>
-                    <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
+                    <span class="value ${hasErrors(bean:postInstance,field:'description','errors')}">
+                        <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
+                    </span>
 					<p class="posttitle">Telephone Number* &#40xxx-xxx-xxxx&#41</p>
-                    <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
+                    <span class="value ${hasErrors(bean:postInstance,field:'phone','errors')}">
+                        <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
+                    </span>
                     
 					<p class="posttitle">Upload Main Photo</p>
                     <div class="upload">

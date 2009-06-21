@@ -812,3 +812,6 @@ span.errors select {
 span.errors input {
     border: 1px solid red;
 }
+span.errors textarea {
+    border: 1px solid red;
+}

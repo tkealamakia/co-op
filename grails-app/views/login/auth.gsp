@@ -15,9 +15,6 @@
 				<div class="logotext"><a class="logotext" href="index.html">Co-op.com</a>
 				</div>
 			</div>
-			<g:if test='${flash.message}'>
-			<div class='login_message'>${flash.message}</div>
-			</g:if>
 			<div class="linkbox">
 				<div class="byinvitation">By Invitation Only
 				</div>
@@ -45,7 +42,10 @@
 		</div>
 <!--This is where the header ends-->
 		<div class="leftarea">
-				<p class="emailexplanation">I see this as the home page for the site, so it should be full of informative, interactive, convincing stuff. Since creating that promotional content will take some time and shoud not requre back-end development, I figured I'd put this text here for a place holder for the fun things to come.</p>
+			<g:if test='${flash.message}'>
+                <div class='login_message'>${flash.message}</div>
+			</g:if>
+            <p class="emailexplanation">I see this as the home page for the site, so it should be full of informative, interactive, convincing stuff. Since creating that promotional content will take some time and shoud not requre back-end development, I figured I'd put this text here for a place holder for the fun things to come.</p>
 		</div>
 
 		<div class="footer">

@@ -4,7 +4,6 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-<!--Beginning of code for the title bar-->
 		<div class="titlebar">
 				<div class="title">My Account
 				</div>

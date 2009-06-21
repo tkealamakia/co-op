@@ -30,7 +30,7 @@ class RegisterController {
 			def person = new Person()
 			person.properties = params
 			return [person: person]
-            // goest to index.gsp
+            // this goes to index.gsp
 		}
 
 		redirect uri: '/'
@@ -38,7 +38,6 @@ class RegisterController {
 
 	/**
 	 * User Information page for current user.
-	 */
 	def show = {
 
 		// get user id from session's domain class.
@@ -50,10 +49,10 @@ class RegisterController {
 			redirect action: index
 		}
 	}
+	 */
 
 	/**
 	 * Edit page for current user.
-	 */
 	def edit = {
 
 		def person
@@ -70,10 +69,10 @@ class RegisterController {
 
 		[person: person]
 	}
+	 */
 
 	/**
 	 * update action for current user's edit page
-	 */
 	def update = {
 
 		def person
@@ -118,6 +117,7 @@ class RegisterController {
 			render view: 'edit', model: [person: person]
 		}
 	 }
+	 */
 
 	/**
 	 * Person save action.
@@ -170,6 +170,7 @@ class RegisterController {
 		person.ward = ward
 		if (person.save()) {
 			role.addToPeople(person)
+            // Configured in acegi plugin directory
 			if (config.security.useMail) {
 				String emailContent = """You have signed up for an account at:
 
