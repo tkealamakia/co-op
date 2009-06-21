@@ -10,7 +10,7 @@
 		<div class="container">
 			<!-- Beginning of the Header -->
 			<div class="header">
-				<div class="logo"><a href="/wardcoop"><img src="/wardcoop/images/logo2.gif" /></a>
+				<div class="logo"><a href="${resource(dir:'')}"><img src="${resource(dir:'images',file:'logo2.gif')}" /></a>
 				</div>
 				<div class="logotextwardname">
 					<div class="logotext"><a class="logotext" href="index.html">Co-op.com</a>
@@ -37,6 +37,12 @@
 	    	
 	        <g:layoutBody />		
 	        
+            <!--Beginning of code for the advertising area on the right-->
+            <div class="adsright">
+                <a href="topad.html"><img class="topad" src="${resource(dir:'images', file:'bigad.gif')}" /></a>
+                <a href="sky160.html"><img class="leftad" src="${resource(dir:'images', file:'sky160.gif')}" /></a>
+                <a href="sky120.html"><img class="rightad" src="${resource(dir:'images', file:'sky120.gif')}" /></a>
+            </div>
 			<div class="footer">
 				<div class="copyright">
 					Copyright Co-op.com 2009

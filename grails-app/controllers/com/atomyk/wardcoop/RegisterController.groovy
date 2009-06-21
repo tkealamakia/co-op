@@ -30,6 +30,7 @@ class RegisterController {
 			def person = new Person()
 			person.properties = params
 			return [person: person]
+            // goest to index.gsp
 		}
 
 		redirect uri: '/'

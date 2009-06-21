@@ -39,21 +39,14 @@
 					<p class="posttitle">Group</p>
 					<p class="notopmargin">My Coop Group Name &nbsp; <a href="notyourward.html" class="blacklink">This is not my group.</a></p>
 					<div class="savecancelbuttons">
-						<input class="savenewpost" type="image" src="/wardcoop/images/createaccount.gif" /> 
-						<a class="cancel" href="cancel.html"><img src="/wardcoop/images/cancelcreateaccount.gif" /></a>
+						<input class="savenewpost" type="image" src="${resource(dir:'images', file:'createaccount.gif')}" />
+						<a class="cancel" href="cancel.html"><img src="${resource(dir:'images', file:'cancelcreateaccount.gif')}" /></a>
 					</div>
 				</g:form>
 			</div>
 			<div class="rightside">
 				<p class="asterisk">Fields marked with * are required.</p>
 			</div>
-		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
 		</div>
 
 	</div>

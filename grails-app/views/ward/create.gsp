@@ -1,47 +1,36 @@
-
-<%@ page import="com.atomyk.wardcoop.Ward" %>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Create Ward</title>         
-    </head>
-    <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${resource(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Ward List</g:link></span>
-        </div>
-        <div class="body">
-            <h1>Create Ward</h1>
-            <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${wardInstance}">
-            <div class="errors">
-                <g:renderErrors bean="${wardInstance}" as="list" />
-            </div>
-            </g:hasErrors>
-            <g:form action="save" method="post" >
-                <div class="dialog">
-                    <table>
-                        <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="name">Name:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:wardInstance,field:'name','errors')}">
-                                    <input type="text" id="name" name="name" value="${fieldValue(bean:wardInstance,field:'name')}"/>
-                                </td>
-                            </tr> 
-                        
-                        </tbody>
-                    </table>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="layout" content="main" />
+</head>
+<body>
+<!--Beginning of code for the title bar-->
+		<div class="titlebar">
+				<div class="title">Create New Group
+				</div>
+		</div>
+		<div class="leftarea">
+			<div class="wardsearch">
+                <g:if test="${flash.message}">
+                <div class="message">${flash.message}</div>
+                </g:if>
+                <g:hasErrors bean="${wardInstance}">
+                <div class="errors">
+                    <g:renderErrors bean="${wardInstance}" as="list" />
                 </div>
-                <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
-                </div>
-            </g:form>
-        </div>
-    </body>
+	            </g:hasErrors>
+				<div class="emailexplanation">Enter the full name of your group in the box below. Make sure to be as acurate as possible so that others searching for your group can find it.</div>
+				<g:form class="leftside" action="save" method="post">
+					<input class="topcreatepost" type="text" name="wardsearch" value="Enter the full name of your group here." />
+
+					<input type="image" class="wardsearch" src="${resource(dir:'images', file:'createward.gif')}" />
+				</g:form>
+			</div>
+			<div class="createpost">
+                    <p class="topmargin"><g:link class="cancel" controller="ward" action="list"><img src="${resource(dir:'images', file:'cancel.gif')}" /></g:link></p>
+			</div>
+		</div>
+
+
+</body>
 </html>

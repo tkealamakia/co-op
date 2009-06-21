@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -49,13 +48,6 @@
 						<a href="category.html"><img src="images/categorytile10.gif" /> </a>
 					</div>
 			</div>
-		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="images/sky120.gif" /></a>
 		</div>
 
 	</div>

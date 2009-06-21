@@ -15,44 +15,44 @@
 		<div class="leftarea">
 			<div class="createpost">
 				<g:if test="${flash.message}">
-				<div class="message">${flash.message}</div>
+                    <div class="message">${flash.message}</div>
 				</g:if>
 				<g:hasErrors bean="${person}">
-				<div class="errors">
-					<g:renderErrors bean="${person}" as="list" />
-				</div>
+                    <div class="errors">
+                        <g:renderErrors bean="${person}" as="list" />
+                    </div>
 				</g:hasErrors>
 				<g:form class="leftside" action="update">
 					<input type="hidden" name="id" value="${person.id}" />
 					<input type="hidden" name="version" value="${person.version}" />
 					<p class="posttitle">Email Address*</p>
-					<input class="createpost" type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
+                    <span class="value ${hasErrors(bean:person,field:'email','errors')}">
+                        <input class="createpost" type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
+                    </span>
 					<p class="posttitle">First Name*</p>
-					<input class="createpost" type="text" id="firstName" name="firstName" value="${person.firstName?.encodeAsHTML()}"/>
+                    <span class="value ${hasErrors(bean:person,field:'firstName','errors')}">
+                        <input class="createpost" type="text" id="firstName" name="firstName" value="${person.firstName?.encodeAsHTML()}"/>
+                    </span>
 					<p class="posttitle">Last Name*</p>
-					<input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
+                    <span class="value ${hasErrors(bean:person,field:'lastName','errors')}">
+                        <input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
+                    </span>
 					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
 					<input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
 					<p class="posttitle">Group</p>
 					<p class="notopmargin">${person?.ward?.name}&nbsp; <g:link controller="ward" action="list" class="blacklink">Change</g:link></p>
 					<div class="savecancelbuttons">
-						<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
-						<a class="cancel" href="/wardcoop"><img src="/wardcoop/images/cancel.gif" /></a>
+						<input class="savenewpost" type="image" src="${resource(dir:'images',file:'save.gif')}" />
+						<a class="cancel" href="${resource(dir:'')}"><img src="${resource(dir:'images',file:'cancel.gif')}" alt="Cancel"/></a>
 					</div>
 				</g:form>
 			</div>
+            <!--
 			<div class="rightside">
 				<p class="asterisk">Fields marked with * are required.</p>
 			</div>
+            -->
 		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
-		</div>
-
 
 </body>
 </html>

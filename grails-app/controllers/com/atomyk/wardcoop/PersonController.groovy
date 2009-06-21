@@ -12,7 +12,7 @@ class PersonController {
 	static Map allowedMethods = [save: 'POST', update: 'POST']
 
 	def index = {
-		redirect action: show, params: params
+		redirect action: edit, params: params
 	}
 
 	/*
@@ -39,7 +39,6 @@ class PersonController {
 		}
 		[person: person, roleNames: roleNames]
 	}
-	*/
 	
 	def show = {
         // Get current user
@@ -54,6 +53,7 @@ class PersonController {
 		}
 		[person: person]
 	}
+	*/
 
 	/**
 	 * Person delete action. Before removing an existing person,
@@ -140,10 +140,11 @@ class PersonController {
 			render view: 'edit', model: buildPersonModel(person)
 		}
 	}
-
+/*
 	def create = {
 		[person: new Person(params), authorityList: Authority.list()]
 	}
+    */
 
 	/**
 	 * Person save action.

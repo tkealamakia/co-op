@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <title><g:layoutTitle default="WardCoOp.com - Building Community Unity" /></title>

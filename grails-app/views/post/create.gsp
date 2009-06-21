@@ -6,17 +6,17 @@
 <body>
 <!--Beginning of code for the title bar-->
 		<div class="titlebar">
-				<div class="title">Create New Post</div>
+            <div class="title">Create New Post</div>
 		</div>
 		<div class="leftarea">
 			<div class="createpost">
 	            <g:if test="${flash.message}">
-	            <div class="message">${flash.message}</div>
+                    <div class="message">${flash.message}</div>
 	            </g:if>
 	            <g:hasErrors bean="${postInstance}">
-	            <div class="errors">
-	                <g:renderErrors bean="${postInstance}" as="list" />
-	            </div>
+                    <div class="errors">
+                        <g:renderErrors bean="${postInstance}" as="list" />
+                    </div>
 	            </g:hasErrors>
 				<g:form class="leftside" action="save" method="post" enctype="multipart/form-data">
 					<p class="posttitle">Category*</p>
@@ -44,8 +44,8 @@
 						<input type="file" id="image" name="image3.image" />
 					</div>
 					<div class="savecancelbuttons">
-						<input class="savenewpost" type="image" src="../images/save.gif" /> 
-						<g:link class="cancel" action="listByUser"><img src="../images/cancel.gif" /></g:link>
+						<input class="savenewpost" type="image" src="${resource(dir:'images', file:'save.gif')}" />
+						<g:link class="cancel" action="listByUser"><img src="${resource(dir:'images',file:'cancel.gif')}" /></g:link>
 					</div>
 				</g:form>
 			</div>
@@ -53,14 +53,6 @@
 				<p class="asterisk">Fields marked with * are required.</p>
 			</div>
 		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
-		</div>
-
 
 </body>
 </html>

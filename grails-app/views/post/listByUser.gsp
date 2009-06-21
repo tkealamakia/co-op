@@ -4,19 +4,19 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-<!--Beginning of code for the title bar-->
+        <!--Beginning of code for the title bar-->
 		<div class="titlebar">
 			<div class="title">My Posts
 			</div>
 		</div>
 		<div class="leftarea">
-<!--End of code for the title bar-->
+        <!--End of code for the title bar-->
 			
             <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
+                <div class="message">${flash.message}</div>
             </g:if>
-<!--This is where the code for one post begins-->
             
+            <!--This is where the code for one post begins-->
             <g:each in="${postInstanceList}" status="i" var="postInstance">
 			<div class="postlineitem">
 				<% def foundMainPhoto = false %>
@@ -29,7 +29,7 @@
 	                </g:each>
                 </g:if>
                 <% if (foundMainPhoto == false) { %>
-					<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="/wardcoop/images/nopicture.gif" /></g:link>
+					<g:link action="show" id="${postInstance.id}"><img class ="postthumb" src="${resource(dir:'images', file:'nopicture.gif')}" /></g:link>
 				<% } %>
                 
 				<div class="editdelete">
@@ -87,16 +87,7 @@
 				</div>
 			</div>
 			
-			
 		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
-		</div>
-
 
 </body>
 </html>

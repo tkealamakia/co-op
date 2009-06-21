@@ -75,6 +75,7 @@ class PostController {
         }
     }
     
+    //TODO only allow current user to delete their own images
     def deleteImage = {
         def imageInstance = Image.get( params.id )
         def post = imageInstance.post

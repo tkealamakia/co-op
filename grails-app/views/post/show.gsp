@@ -8,7 +8,7 @@
 			<div class="title">Post Details
 			</div>
 		</div>
-<!--Beginning of code for the title bar-->
+        <!--Beginning of code for the title bar-->
 		<div class="leftarea">
 			<div class="postpics">
 				<div class="bigpicture">
@@ -26,24 +26,30 @@
 			</div>
 			
 			<div class="postcontent">
-				<a class="backbutton" href="back.html"><img src="/wardcoop/images/back.gif" /></a>
+				<a class="backbutton" href="back.html"><img src="${resource(dir:'images', file:'back.gif')}" /></a>
 				<div class="posttitle">
 					${fieldValue(bean:postInstance, field:'title')}
 				</div>
 				<div class="postprice">
-					${fieldValue(bean:postInstance, field:'price')}				</div>
+					${fieldValue(bean:postInstance, field:'price')}
+				</div>
 				<div class="postdescription">
-					${fieldValue(bean:postInstance, field:'description')}				</div>
+					${fieldValue(bean:postInstance, field:'description')}
+				</div>
 				<div class="contact">Contact:
 				</div>
 				<div class="contactname">
-					${fieldValue(bean:postInstance.person, field:'firstName')}					${fieldValue(bean:postInstance.person, field:'lastName')}				</div>
+					${fieldValue(bean:postInstance.person, field:'firstName')}
+					${fieldValue(bean:postInstance.person, field:'lastName')}
+				</div>
 				<div class="contactphone">
-					${fieldValue(bean:postInstance, field:'phone')}				</div>
+					${fieldValue(bean:postInstance, field:'phone')}
+				</div>
 				<div class="contactemail">
-					${fieldValue(bean:postInstance.person, field:'email')}				</div>
+					${fieldValue(bean:postInstance.person, field:'email')}
+				</div>
 				<div class="flaglinks">
-					<div class="backbutton"><a href="flag.html"><img src="/wardcoop/images/flag.gif" /></a>
+					<div class="backbutton"><a href="flag.html"><img src="${resource(dir:'images', file:'flag.gif')}" /></a>
 					</div>
 					<div class="flagexplain">
 					<a class="brownlink" href="flagexplain.html">What's this for?</a>
@@ -51,15 +57,6 @@
 				</div>
 			</div>
 		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
-		</div>
-
-
 
 </body>
 </html>

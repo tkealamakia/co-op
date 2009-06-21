@@ -4,9 +4,9 @@
     <meta name="layout" content="main" />
 </head>
 <body>
-<!--Beginning of code for the title bar-->
+        <!--Beginning of code for the title bar-->
 		<div class="titlebar">
-				<div class="title">Edit Post</div>
+            <div class="title">Edit Post</div>
 		</div>
 		<div class="leftarea">
 			<div class="createpost">
@@ -72,8 +72,8 @@
                      
                     <br>
 					<div class="savecancelbuttons">
-						<input class="savenewpost" type="image" src="/wardcoop/images/save.gif" /> 
-						<g:link class="cancel" action="listByUser"><img src="/wardcoop/images/cancel.gif" /></g:link>
+						<input class="savenewpost" type="image" src="${resource(dir:'images', file:'save.gif')}" />
+						<g:link class="cancel" action="listByUser"><img src="${resource(dir:'images',file:'cancel.gif')}" /></g:link>
 					</div>
 				</g:form>
 			</div>
@@ -81,14 +81,6 @@
 				<p class="asterisk">Fields marked with * are required.</p>
 			</div>
 		</div>
-<!--Beginning of code for the advertising area on the right-->
-
-		<div class="adsright">
-		<a href="topad.html"><img class="topad" src="/wardcoop/images/bigad.gif" /></a>
-		<a href="sky160.html"><img class="leftad" src="/wardcoop/images/sky160.gif" /></a>
-		<a href="sky120.html"><img class="rightad" src="/wardcoop/images/sky120.gif" /></a>
-		</div>
-
 
 </body>
 </html>

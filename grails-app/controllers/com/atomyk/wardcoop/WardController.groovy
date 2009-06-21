@@ -11,6 +11,9 @@ class WardController {
 
     def list = {
         def searchTerm = params.wardsearch
+        if (searchTerm == "") {
+            searchTerm = null
+        }
         params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
         [ wardInstanceList: Ward.findByNameLike("%${searchTerm}%"), wardInstanceTotal: Ward.count() ]
     }
