@@ -8,8 +8,7 @@ class PostController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    static allowedMethods = [save:'POST', update:'POST']
-    //static allowedMethods = [delete:'POST', save:'POST', update:'POST']
+    static allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
         params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
@@ -76,8 +75,6 @@ class PostController {
         def email = user?.getUsername()
         def person = Person.findByEmail(email)
 
-        println person.id
-        println postInstance?.person?.id
         if(person.id != postInstance?.person?.id) {
             println "in here"
             flash.message = "You are not allowed to perform this operation"
@@ -186,14 +183,25 @@ class PostController {
 		            image3.save()
 		        }
 		            
-                flash.message = "Post ${params.id} updated"
+                flash.message = "Your Post was updated"
                 redirect(action:listByUser,id:postInstance.id)
             }
             else {
-                println "check1"
-                //TODO Fix the error page that is produced on an edit
-                // when required fields are not provided.
-                render(view:'edit',model:[postInstance:postInstance])
+                def imageList = postInstance.images.toArray().sort { it.type }.reverse()
+                def imageArray = [null, null, null]
+                imageList.each {
+                    if (it.type == 'imageMain') {
+                        imageArray[0] = it
+                    }
+                    else if (it.type == 'image2') {
+                        imageArray[1] = it
+                    }
+                    else if (it.type == 'image3') {
+                        imageArray[2] = it
+                    }
+                }
+
+                render(view:'edit',model:[postInstance:postInstance, imageList: imageArray])
             }
         }
         else {
