@@ -9,7 +9,7 @@ class PersonController {
 
 	// the delete, save and update actions only accept POST requests
 	//static Map allowedMethods = [delete: 'POST', save: 'POST', update: 'POST']
-	static Map allowedMethods = [save: 'POST', update: 'POST']
+	static Map allowedMethods = [save: 'POST', update: 'POST', updatePassword: 'POST']
 
 	def index = {
 		redirect action: edit, params: params
@@ -82,9 +82,7 @@ class PersonController {
 
 	def edit = {
         // Get current user
-        def user = authenticateService.principal() 
-        def email = user?.getUsername()
-        def person = Person.findByEmail(email)
+        def person = PersonHelper.getCurrentUser(authenticateService)
         
         // This means we are returning from a ward selection page
 	    if (params.id != null) {
@@ -101,6 +99,37 @@ class PersonController {
 
 		return buildPersonModel(person)
 	}
+
+    def editPassword = { }
+
+    def updatePassword = {
+        def person = PersonHelper.getCurrentUser(authenticateService)
+		person = Person.get(person.id)
+
+        if (params.passwd != params.passwdConfirm) {
+            flash.message = "Passwords do not match"
+            redirect action: editPassword
+            return
+        }
+		else if (params.passwd.length() < 6) {
+			flash.message = 'The password you entered must be at least 6 characters.'
+            redirect action: editPassword
+            return
+		}
+        else {
+			person.passwd = authenticateService.encodePassword(params.passwd)
+            if (!person.hasErrors() && person.save()) {
+                flash.message = "Password updated."
+                redirect action: edit, id: person.id
+                return
+            }
+            else {
+                flash.message = "Unable to update your password"
+                redirect action: edit, id: person.id
+                return
+            }
+        }
+    }
 
 	/**
 	 * Person update action.

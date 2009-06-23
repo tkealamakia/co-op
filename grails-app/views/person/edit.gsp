@@ -37,9 +37,11 @@
                         <input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
                     </span>
 					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
-					<input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
+                        <input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
 					<p class="posttitle">Group</p>
 					<p class="notopmargin">${person?.ward?.name}&nbsp; <g:link controller="ward" action="list" class="blacklink">Change</g:link></p>
+					<p class="posttitle">Password</p>
+					<p class="notopmargin">***************&nbsp; <g:link action="editPassword" class="blacklink">Change</g:link></p>
 					<div class="savecancelbuttons">
 						<input class="savenewpost" type="image" src="${resource(dir:'images',file:'save.gif')}" />
 						<a class="cancel" href="${resource(dir:'')}"><img src="${resource(dir:'images',file:'cancel.gif')}" alt="Cancel"/></a>
