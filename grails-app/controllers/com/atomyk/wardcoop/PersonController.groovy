@@ -100,7 +100,10 @@ class PersonController {
 		return buildPersonModel(person)
 	}
 
-    def editPassword = { }
+    def editPassword = {
+
+    }
+
 
     def updatePassword = {
         def person = PersonHelper.getCurrentUser(authenticateService)

@@ -18,6 +18,7 @@ class LoginController {
 	 * Dependency injection for the authentication service.
 	 */
 	def authenticateService
+	def emailerService
 
 	/**
 	 * Dependency injection for OpenIDConsumer.
@@ -30,6 +31,8 @@ class LoginController {
 	def openIDAuthenticationProcessingFilter
 
 	private final authenticationTrustResolver = new AuthenticationTrustResolverImpl()
+
+	static Map allowedMethods = [updatePassword: 'POST']
 
 	def index = {
 		if (isLoggedIn()) {
@@ -121,11 +124,11 @@ class LoginController {
 
 	/**
 	 * Login page for users with a remember-me cookie but accessing a IS_AUTHENTICATED_FULLY page.
-	 */
 	def full = {
 		render view: 'auth', params: params,
 			model: [hasCookie: authenticationTrustResolver.isRememberMe(SCH.context?.authentication)]
 	}
+	 */
 
 	// Denial page (data|view|json) for Ajax access.
 	def deniedAjax = {

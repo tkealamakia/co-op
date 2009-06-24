@@ -16,6 +16,7 @@ class Person {
 	boolean enabled
 	String email
 	String telephone
+    String passwordResetToken
 
 
 	/** plain password to create a MD5 password */
@@ -26,6 +27,7 @@ class Person {
 		firstName(blank: false)
 		lastName(blank: false)
 		passwd(blank: false, minLength:6)
+        passwordResetToken(nullable:true)
 		enabled()
 	}
 }
