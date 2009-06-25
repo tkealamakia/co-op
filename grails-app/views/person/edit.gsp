@@ -44,7 +44,7 @@
 					<p class="notopmargin">***************&nbsp; <g:link action="editPassword" class="blacklink">Change</g:link></p>
 					<div class="savecancelbuttons">
 						<input class="savenewpost" type="image" src="${resource(dir:'images',file:'save.gif')}" />
-						<a class="cancel" href="${resource(dir:'')}"><img src="${resource(dir:'images',file:'cancel.gif')}" alt="Cancel"/></a>
+						<a class="cancel" href="${resource(dir:'/home')}"><img src="${resource(dir:'images',file:'cancel.gif')}" alt="Cancel"/></a>
 					</div>
 				</g:form>
 			</div>

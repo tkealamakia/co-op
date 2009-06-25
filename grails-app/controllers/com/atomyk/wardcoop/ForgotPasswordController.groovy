@@ -20,7 +20,7 @@ class ForgotPasswordController {
         def person = Person.findByEmail(params.email)
         if (person != null) {
             // Generate a token and update the user with that
-            def token = "1234567fixme"
+            def token = getRandomToken(10)
             person.passwordResetToken = token
             person.save()
             // Send an e-mail with the proper link
@@ -39,6 +39,7 @@ class ForgotPasswordController {
 				]
 				emailerService.sendEmails([email])
 			}
+            flash.message = "Plese check your e-mail and click on the link to complete the process"
             redirect (uri: '/')
         }
         else {
@@ -49,7 +50,7 @@ class ForgotPasswordController {
     }
     def editPassword = {
         //Accept url from e-mail link
-        def token = "1234567fixme"
+        def token = params.token
         def person = Person.findByPasswordResetToken(token)
         if (person != null) {
             person.passwordResetToken = null
@@ -57,7 +58,7 @@ class ForgotPasswordController {
             return [person: person]
         }
         else {
-            redirect (uri: "/")
+            redirect (uri: "/home")
         }
 
     }
@@ -79,15 +80,38 @@ class ForgotPasswordController {
 			person.passwd = authenticateService.encodePassword(params.passwd)
             if (!person.hasErrors() && person.save()) {
                 flash.message = "Password updated."
-                redirect (uri: '/')
+                redirect (uri: "/home")
                 return
             }
             else {
                 flash.message = "Unable to update your password"
-                redirect (uri: '/')
+                redirect (uri: "/home")
                 return
             }
         }
     }
+
+
+
+    String getRandomToken(length) {
+        // create the list of available characters
+        def availChars = []
+        ('A'..'Z').each { availChars << it.toString() }
+        // even it out to about the same odds of getting a char or a number
+        3.times { (0..9).each { availChars << it.toString() } }
+
+        //def generateRandomString = {
+          def max = availChars.size
+          def rnd = new Random()
+          def sb = new StringBuilder()
+          length.times { sb.append(availChars[rnd.nextInt(max)]) }
+          sb.toString()
+        //}
+
+        //generateRandomString()
+        
+    }
+
+
 
 }

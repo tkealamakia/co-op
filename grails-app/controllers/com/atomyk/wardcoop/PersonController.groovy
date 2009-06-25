@@ -166,7 +166,7 @@ class PersonController {
 			//Authority.findAll().each { it.removeFromPeople(person) }
 			//addRoles(person)
 			flash.message = "Account updated."
-			redirect uri: '/'
+			redirect uri: '/home'
 		}
 		else {
 			render view: 'edit', model: buildPersonModel(person)
