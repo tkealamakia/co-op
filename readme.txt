@@ -1,6 +1,10 @@
 Setup info
 
 1. Modify the ~/.grails/1.1.1/projects/wardcoop/plugins/acegi-0.5.1/grails-app/conf/DefaultSecurityConfig.groovy 
-   to change "username = 'username'" to "username = 'email'"
+   a. Change "username = 'username'" to "username = 'email'"
+   b. Change the section in that file where the smtp server is configured to:
+      1. smtp server: mail.xmission.com
+      2. username: tkealamakia
+      3. password: c00pftw
 2. Setup mysql with root's password as 'asdfg'
 3. Run the scripts/setup.ddl into mysql
