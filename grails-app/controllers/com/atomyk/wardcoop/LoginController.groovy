@@ -32,8 +32,6 @@ class LoginController {
 
 	private final authenticationTrustResolver = new AuthenticationTrustResolverImpl()
 
-	static Map allowedMethods = [updatePassword: 'POST']
-
 	def index = {
 		if (isLoggedIn()) {
 			redirect uri: '/'
