@@ -8,7 +8,7 @@ class PostController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    static allowedMethods = [delete:'POST', save:'POST', update:'POST']
+    static allowedMethods = [save:'POST', update:'POST']
 
     def list = {
         params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
@@ -46,7 +46,7 @@ class PostController {
 
 
         if(!postInstance) {
-            flash.message = "Post not found with id ${params.id}"
+            flash.message = "Post not found "
             redirect(action:list)
         }
         else { 
@@ -86,11 +86,11 @@ class PostController {
         if(postInstance) {
             try {
                 postInstance.delete(flush:true)
-                flash.message = "Post ${params.id} deleted"
+                flash.message = "Post deleted"
                 redirect(action:listByUser)
             }
             catch(org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "Post ${params.id} could not be deleted"
+                flash.message = "Post could not be deleted"
                 redirect(action:show,id:params.id)
             }
         }
@@ -107,11 +107,11 @@ class PostController {
         if(imageInstance) {
             try {
                 imageInstance.delete(flush:true)
-                flash.message = "Image ${params.id} deleted"
+                flash.message = "Image deleted"
                 redirect(action:edit, id:post.id)
             }
             catch(org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "Image ${params.id} could not be deleted"
+                flash.message = "Image could not be deleted"
                 redirect(action:edit,id:post.id)
             }
         }
@@ -126,7 +126,7 @@ class PostController {
         def postInstance = Post.get( params.id )
 
         if(!postInstance) {
-            flash.message = "Post not found with id ${params.id}"
+            flash.message = "Post not found "
             redirect(action:list)
         }
         else {
@@ -205,7 +205,7 @@ class PostController {
             }
         }
         else {
-            flash.message = "Post not found with id ${params.id}"
+            flash.message = "Post not found"
             redirect(action:listByUser)
         }
     }

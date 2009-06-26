@@ -11,22 +11,33 @@
         <!--Beginning of code for the title bar-->
 		<div class="leftarea">
 			<div class="postpics">
+                <g:if test="${imageList[0] != null}">
 				<div class="bigpicture">
-	                <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
+                        <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
 				</div>
+                </g:if>
+                <g:else>
+				<div class="bigpicture">
+                        <img class ="largepic" src="${resource(dir:'images', file:'nopicture.gif')}" />
+				</div>
+                </g:else>
+                <g:if test="${imageList[1] != null}">
 				<div class="leftsmallpic">
-	                <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[1]?.id)}"/>
+                        <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[1]?.id)}"/>
 				</div>
+                </g:if>
+                <g:if test="${imageList[2] != null}">
 				<div class="rightsmallpic">
-	                <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[2]?.id)}"/>
+                        <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[2]?.id)}"/>
 				</div>
+                </g:if>
 				<div class="dateposted">
-					${fieldValue(bean:postInstance, field:'postDate')}
+                    <g:formatDate format="MMMM dd, yyyy" date="${postInstance.postDate}" />
 				</div>
 			</div>
 			
 			<div class="postcontent">
-				<a class="backbutton" href="back.html"><img src="${resource(dir:'images', file:'back.gif')}" /></a>
+                <g:link class="backbutton" action="listByUser"><img src="${resource(dir:'images', file:'back.gif')}" /></g:link>
 				<div class="posttitle">
 					${fieldValue(bean:postInstance, field:'title')}
 				</div>

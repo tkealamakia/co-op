@@ -24,7 +24,7 @@
 		            <g:each in="${postInstance.images}" status="j" var="image">
 		            	<g:if test="${image.type == 'imageMain'}">
 		            		<% foundMainPhoto = true %>
-			                <img class="postthumb" src="${createLink(controller:'image', action:'image', id:image.id)}"/>
+                            <g:link action="show" id="${postInstance.id}"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:image.id)}"/></g:link>
 						</g:if>
 	                </g:each>
                 </g:if>
@@ -33,12 +33,11 @@
 				<% } %>
                 
 				<div class="editdelete">
-					<g:link class="brownlink" action="show" id="${postInstance.id}">Show</g:link><br />
 					<g:link class="brownlink" action="edit" id="${postInstance.id}">Edit</g:link><br />
 					<g:link class="brownlink" onclick="return confirm('Are you sure?');" action="delete" id="${postInstance.id}">Delete</g:link>
 				</div>
 				<div class="postlistcontent">
-					<div class="postlisttitle"><g:link class="posttitle" action="edit">${fieldValue(bean:postInstance, field:'title')}</g:link>
+					<div class="postlisttitle"><g:link class="posttitle" action="show" id="${postInstance.id}">${fieldValue(bean:postInstance, field:'title')}</g:link>
 					</div>
 					<div class="postlistdescription">
                         <tags:postChopper value="${fieldValue(bean:postInstance, field:'description')}" />
@@ -47,7 +46,8 @@
 						<div class="postlistprice">
 							${fieldValue(bean:postInstance, field:'price')}
 						</div>
-						<div class="postdate">May 29, 2009
+						<div class="postdate">
+                            <g:formatDate format="MMMM dd, yyyy" date="${postInstance.postDate}" />
 						</div>
 					</div>
 				</div>
