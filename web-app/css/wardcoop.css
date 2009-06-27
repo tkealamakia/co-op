@@ -508,6 +508,7 @@ margin:12px 0px 0px 5px;
 div.dateposted
 {
 float:left;
+clear:left;
 margin:5px 0px 0px 0px;
 font-weight:regular;
 }

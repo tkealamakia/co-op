@@ -44,9 +44,6 @@
 					<div class="leftcategory">
 						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile9.gif')}" /> </a>
 					</div>
-					<div class="rightcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile10.gif')}" /> </a>
-					</div>
 			</div>
 		</div>
 

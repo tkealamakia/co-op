@@ -32,7 +32,7 @@
 				</div>
                 </g:if>
 				<div class="dateposted">
-                    <g:formatDate format="MMMM dd, yyyy" date="${postInstance.postDate}" />
+                    Posted&nbsp;<g:formatDate format="MMMM dd, yyyy" date="${postInstance.postDate}" />
 				</div>
 			</div>
 			
