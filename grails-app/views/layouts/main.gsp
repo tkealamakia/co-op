@@ -27,7 +27,7 @@
 					</div>
 					<div class="toplinksright">
 						<div class="byinvitationonly">By Invitation Only</div>
-						<a class="white" href="invite.html">Invite Someone</a>
+                        <g:link class="white" controller="invite" action="create">Invite Someone</g:link>
 					</div>
 				</div>
 			</div>
