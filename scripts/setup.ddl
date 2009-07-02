@@ -9,6 +9,7 @@ insert into requestmap values (3, 0, 'ROLE_USER', '/image/**');
 insert into requestmap values (4, 0, 'ROLE_USER', '/main/**');
 insert into requestmap values (5, 0, 'ROLE_USER', '/person/**');
 insert into requestmap values (6, 0, 'ROLE_USER', '/post/**');
+insert into requestmap values (6, 0, 'ROLE_USER', '/invite/**');
 insert into requestmap values (7, 0, 'ROLE_USER', '/home/**');
 insert into ward values (1, 0, 'Default');
 insert into category values (1, 0, 1, 'Free Stuff');

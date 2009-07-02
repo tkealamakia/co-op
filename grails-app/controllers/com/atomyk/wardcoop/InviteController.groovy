@@ -17,8 +17,21 @@ class InviteController {
             def addresses = []
             def tok = new StringTokenizer(invitees)
 
+            boolean inError = false
             while (tok.hasMoreTokens()) {
-                addresses += tok.nextToken()
+                def address = tok.nextToken()
+                if (address ==~ /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/) {
+                    addresses += address
+                }
+                else {
+                    inError = true
+                }
+            }
+
+            if (inError) {
+                flash.message = "At least one e-mail address is not properly formed."
+                redirect (action: create)
+                return
             }
 
 
@@ -38,13 +51,13 @@ class InviteController {
                 ]
                 emailerService.sendEmails([email])
                 flash.message = "Your invites were sent."
-                redirect (action: "create")
+                redirect (action: create)
 
             }
         }
         else {
             flash.message = "Your invite list is empty."
-            redirect (action:"create")
+            redirect (action:create)
         }
 
     }
