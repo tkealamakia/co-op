@@ -9,11 +9,11 @@
 			<div class="title">${category.name}
 			</div>
 			<div class="searchbox">
-				<form class="searchbox" action="search" method="post">
+				<g:form class="searchbox" action="search" method="post">
 					<input type="text" name="searchStr" class="searchbox" />
-					<input type="hidden" name="categoryId" value="${category.id}" />
+					<input type="hidden" name="id" value="${category.id}" />
 					<input type="image" class="searchbutton" src="${resource(dir:'images', file:'search.gif')}" />
-				</form>
+				</g:form>
 			</div>
 		</div>
 		<div class="leftarea">

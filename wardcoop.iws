@@ -2,10 +2,7 @@
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/post/listByUser.gsp" afterPath="$PROJECT_DIR$/grails-app/views/post/listByUser.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/atomyk/wardcoop/PostController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/atomyk/wardcoop/PostController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/taglib/com/atomyk/wardcoop/TagLib.groovy" afterPath="$PROJECT_DIR$/grails-app/taglib/com/atomyk/wardcoop/TagLib.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/wardcoop.css" afterPath="$PROJECT_DIR$/web-app/css/wardcoop.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wardcoop.iws" afterPath="$PROJECT_DIR$/wardcoop.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/post/list.gsp" afterPath="$PROJECT_DIR$/grails-app/views/post/list.gsp" />
     </list>
@@ -71,7 +68,7 @@
           <file leaf-file-name="PostController.groovy" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/atomyk/wardcoop/PostController.groovy">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="62" selection-start="809" selection-end="809" vertical-scroll-proportion="0.1904762">
+                <state line="48" column="41" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.4642857">
                   <folding />
                 </state>
               </provider>
@@ -108,10 +105,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="list.gsp" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="list.gsp" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/grails-app/views/post/list.gsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="71" column="45" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.86147624">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="edit.gsp" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/grails-app/views/post/edit.gsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="0.24266936">
                   <folding />
                 </state>
               </provider>
@@ -550,7 +556,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Web Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
       <window_info id="Dataflow to this" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" />
@@ -558,7 +564,7 @@
       <window_info id="Data Sources" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18002136" sideWeight="0.53928095" order="0" side_tool="false" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18002136" sideWeight="0.53928095" order="0" side_tool="false" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
@@ -589,7 +595,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Couple project file changes, and removed non-grails pagination stuff from post list view." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed menu TagLib to incorporate the categoryId into the 'id' portion of the URL. This allows it to be treated the same as the 'id' property set on the 'g:paginate' tag.&#10;&#10;Specified the categoryId as the 'id' property of the 'g:paginate' tag so the pagination links would include the category ID when calling into the controller. Also explicitly set the controller and action for both list and listByUser pages.&#10;&#10;Set the maxsteps property to 10.&#10;&#10;Changed PostController list and listByUser methods to retrieve a count according to correct query parameters, and put that value into the view for use in pagination. Haven't figured out how to do this for search results yet.&#10;&#10;Finally, made a few changes to wardcoop.css file. Renamed 'pagination' class to 'paginateButtons' to match grails convention. And added a 'paginateButtons a' style to make the pagination links easier to read." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -601,6 +607,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Couple project file changes, and removed non-grails pagination stuff from post list view." />
+    <MESSAGE value="Changed menu TagLib to incorporate the categoryId into the 'id' portion of the URL. This allows it to be treated the same as the 'id' property set on the 'g:paginate' tag.&#10;&#10;Specified the categoryId as the 'id' property of the 'g:paginate' tag so the pagination links would include the category ID when calling into the controller. Also explicitly set the controller and action for both list and listByUser pages.&#10;&#10;Set the maxsteps property to 10.&#10;&#10;Changed PostController list and listByUser methods to retrieve a count according to correct query parameters, and put that value into the view for use in pagination. Haven't figured out how to do this for search results yet.&#10;&#10;Finally, made a few changes to wardcoop.css file. Renamed 'pagination' class to 'paginateButtons' to match grails convention. And added a 'paginateButtons a' style to make the pagination links easier to read." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -686,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/atomyk/wardcoop/PostController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="62" selection-start="809" selection-end="809" vertical-scroll-proportion="0.1904762">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/post/listByUser.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
@@ -700,9 +700,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/atomyk/wardcoop/PostController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="41" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.4642857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/post/list.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="45" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.86147624">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/post/edit.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="42" selection-start="746" selection-end="746" vertical-scroll-proportion="0.24266936">
           <folding />
         </state>
       </provider>

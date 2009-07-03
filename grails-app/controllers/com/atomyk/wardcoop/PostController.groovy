@@ -45,7 +45,7 @@ class PostController {
     }
 
 	def search = {
-		def categoryId = params.categoryId
+		def categoryId = params.id
 		def category = Category.findById(categoryId)
 		def searchStr = params.searchStr
 
