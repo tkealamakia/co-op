@@ -10,10 +10,6 @@ class PostController {
     // the delete, save and update actions only accept POST requests
     static allowedMethods = [save:'POST', update:'POST']
 
-    def list = {
-        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-        [ postInstanceList: Post.list( params ), postInstanceTotal: Post.count() ]
-    }
     def listByUser = {
         // Get current user
         def user = authenticateService.principal() 
@@ -28,6 +24,39 @@ class PostController {
         
         [ postInstanceList: postList, postInstanceTotal: postList.size() ]
     }
+
+    def list = {
+        // Get current category
+		def categoryId = params.categoryId
+		def category = Category.findById(categoryId)
+
+        def postList = Post.findAllByCategory(category)
+        if (postList == null) {
+            postList = new ArrayList()
+        }
+
+        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
+        [ postInstanceList: postList, postInstanceTotal: postList.count(),
+		  category: category ]
+    }
+
+	def search = {
+		def categoryId = params.categoryId
+		def category = Category.findById(categoryId)
+		def searchStr = params.searchStr
+
+        def postList = Post.withCriteria {
+			eq('category', category)
+			or {
+				like("title", "%${searchStr}%")
+				like("description", "%${searchStr}%")
+			}
+		}
+
+        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
+		render(view:'list',model:[ postInstanceList: postList,
+				postInstanceTotal: postList.count(), category: category ])
+	}
 
     def show = {
         def postInstance = Post.get( params.id )
