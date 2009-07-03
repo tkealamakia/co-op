@@ -7,4 +7,4 @@ Setup info
       2. mailUsername: tkealamakia
       3. mailPassword: c00pftw
 2. Setup mysql with root's password as 'asdfg'
-3. Run the scripts/setup.ddl into mysql
+3. Run the scripts/setup.sql into mysql
