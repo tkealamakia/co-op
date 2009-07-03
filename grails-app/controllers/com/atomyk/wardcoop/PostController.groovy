@@ -16,27 +16,31 @@ class PostController {
         def email = user?.getUsername()
         def person = Person.findByEmail(email)
 
-        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
+        params.max = Math.min( params.max ? params.max.toInteger() : 2,  100)
+        def count = Post.countByPerson( person )
         def postList = Post.findAllByPerson(person, params)
         if (postList == null) {
             postList = new ArrayList()
         }
         
-        [ postInstanceList: postList, postInstanceTotal: postList.size() ]
+        [ postInstanceList: postList, postInstanceTotal: count ]
     }
 
     def list = {
         // Get current category
-		def categoryId = params.categoryId
-		def category = Category.findById(categoryId)
+		def categoryId = params.id
+		def category = Category.findById( categoryId )
 
-        def postList = Post.findAllByCategory(category)
-        if (postList == null) {
+        params.max = Math.min( params.max ? params.max.toInteger() : 2,  100 )
+
+        def count = Post.countByCategory( category )
+        def postList = Post.findAllByCategory( category, params )
+        
+        if ( postList == null ) {
             postList = new ArrayList()
         }
 
-        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-        [ postInstanceList: postList, postInstanceTotal: postList.count(),
+        [ postInstanceList: postList, postInstanceTotal: count,
 		  category: category ]
     }
 

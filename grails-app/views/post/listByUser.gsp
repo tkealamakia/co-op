@@ -55,9 +55,11 @@
 			</g:each>
 			
             <div class="paginateButtons">
-                <g:paginate next="Forward" prev="Back"
-                            maxsteps="0" controller="post"
-                            action="listByUser" total="${postInstanceTotal}"  />
+                <div class="pagenumbers">
+                    <g:paginate next="Forward" prev="Back"
+                                maxsteps="10" controller="post"
+                                action="listByUser" total="${postInstanceTotal}"  />
+                </div>
             </div>
 			
             <!--
