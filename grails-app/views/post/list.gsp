@@ -66,6 +66,7 @@
                 <g:paginate total="${postInstanceTotal}" />
             </div>
 
+<!--
 			<div class="pagination">
 				<div class="pagenumbers">
 				<a class="white" href="back.html">Back</a>
@@ -93,6 +94,7 @@
 				<a class="white" href="next.html">Next</a>
 				</div>
 			</div>
+-->
 
 		</div>
 
