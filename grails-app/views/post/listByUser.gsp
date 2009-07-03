@@ -53,12 +53,14 @@
 				</div>
 			</div>
 			</g:each>
-<!--This is where the code for one post ends-->
 			
             <div class="paginateButtons">
-                <g:paginate total="${postInstanceTotal}" />
+                <g:paginate next="Forward" prev="Back"
+                            maxsteps="0" controller="post"
+                            action="listByUser" total="${postInstanceTotal}"  />
             </div>
 			
+            <!--
 			<div class="pagination">
 				<div class="pagenumbers">
 				<a class="white" href="back.html">Back</a>
@@ -86,6 +88,7 @@
 				<a class="white" href="next.html">Next</a>
 				</div>
 			</div>
+            -->
 			
 		</div>
 

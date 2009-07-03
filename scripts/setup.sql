@@ -1,7 +1,3 @@
-delete from authority;
-delete from requestmap;
-delete from ward;
-delete from category;
 insert into authority values (1, 0, 'ROLE_USER', 'Default User');
 insert into requestmap values (1, 0, 'ROLE_ADMIN', '/requestmap/**');
 insert into requestmap values (2, 0, 'ROLE_ADMIN', '/authority/**');
@@ -9,8 +5,8 @@ insert into requestmap values (3, 0, 'ROLE_USER', '/image/**');
 insert into requestmap values (4, 0, 'ROLE_USER', '/main/**');
 insert into requestmap values (5, 0, 'ROLE_USER', '/person/**');
 insert into requestmap values (6, 0, 'ROLE_USER', '/post/**');
-insert into requestmap values (6, 0, 'ROLE_USER', '/invite/**');
-insert into requestmap values (7, 0, 'ROLE_USER', '/home/**');
+insert into requestmap values (7, 0, 'ROLE_USER', '/invite/**');
+insert into requestmap values (8, 0, 'ROLE_USER', '/home/**');
 insert into ward values (1, 0, 'Default');
 insert into category values (1, 0, 1, 'Free Stuff');
 insert into category values (2, 0, 2, 'For Rent');

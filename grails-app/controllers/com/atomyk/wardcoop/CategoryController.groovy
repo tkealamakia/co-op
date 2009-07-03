@@ -11,7 +11,6 @@ class CategoryController {
 
     def list = {
         params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-        println "test"
         [ categoryInstanceList: Category.list( params ), categoryInstanceTotal: Category.count() ]
     }
 

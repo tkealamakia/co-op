@@ -19,14 +19,14 @@ class PostController {
         def user = authenticateService.principal() 
         def email = user?.getUsername()
         def person = Person.findByEmail(email)
-        
-        def postList = Post.findAllByPerson(person)
+
+        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
+        def postList = Post.findAllByPerson(person, params)
         if (postList == null) {
             postList = new ArrayList()
         }
         
-        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-        [ postInstanceList: postList, postInstanceTotal: postList.count() ]
+        [ postInstanceList: postList, postInstanceTotal: postList.size() ]
     }
 
     def show = {
