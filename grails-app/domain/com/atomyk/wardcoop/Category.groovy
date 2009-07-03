@@ -7,5 +7,7 @@ class Category {
     
     static hasMany = [posts:Post]
     
-    
+    String toString() {
+        name
+    }
 }
