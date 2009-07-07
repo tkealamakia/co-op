@@ -241,8 +241,8 @@ color:white;
 div.searchbox
 {
 display:inline;
-float:left;
-margin:4px 0px 0px 544px;
+float:right;
+margin:4px 6px 0px 0px;
 }
 
 div.searchbox2
