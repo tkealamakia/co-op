@@ -5,8 +5,8 @@ package com.atomyk.wardcoop
  */
 class Person {
 	static transients = ['pass']
-	static hasMany = [authorities: Authority, posts: Post]
-	static belongsTo = [ward:Ward]
+	static hasMany = [authorities: Authority, posts: Post, categories: Category]
+	static belongsTo = [ward: Ward]
 	
 	String firstName
 	String lastName
