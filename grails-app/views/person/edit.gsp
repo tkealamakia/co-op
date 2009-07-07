@@ -8,7 +8,7 @@
 				<div class="title">My Account
 				</div>
 				<div class="emailpreferences">
-					<a class="white" href="emailalerts.html">Email Preferences</a>
+					<g:link class="white" controller="emailPreference" action="edit">Email Preferences</g:link>
 				</div>
 			</div>
 		<div class="leftarea">
