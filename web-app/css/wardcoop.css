@@ -383,18 +383,18 @@ margin: 5px 0px 0px 5px;
 img.topad
 {
 width:300px;
+margin-bottom:10px;
 }
 
 img.leftad
 {
 float:left;
-margin-top:5px;
 }
 
 img.rightad
 {
 float:left;
-margin:5px 0px 0px 20px;
+margin:0px 0px 0px 20px;
 }
 /*End of right side advertising area styles*/
 

@@ -13,9 +13,9 @@
 				<div class="logo"><a href="${resource(dir:'')}"><img src="${resource(dir:'images',file:'logo2.gif')}" /></a>
 				</div>
 				<div class="logotextwardname">
-					<div class="logotext"><a class="logotext" href="index.html">Co-op.com</a>
+					<div class="logotext"><a class="logotext" href="index.html">Group Name</a>
 					</div>
-					<div class="wardname">Group Name
+					<div class="wardname">Community
 					</div>
 				</div>
 				<div class="linkbox">

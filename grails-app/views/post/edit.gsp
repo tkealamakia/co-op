@@ -20,20 +20,20 @@
 				<g:form class="leftside" action="update" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="${postInstance.id}"/>
 					<input type="hidden" name="version" value="${postInstance.version}" />
-					<p class="posttitle">Category*</p>
+					<p class="posttitle">Category</p>
 					<g:select class="toppad" name="category.id" from="${com.atomyk.wardcoop.Category.list()}"
 						optionKey="id" optionValue="name" value="${postInstance?.category?.id}"/>
-					<p class="posttitle">Title*</p>
+					<p class="posttitle">Title</p>
                     <span class="value ${hasErrors(bean:postInstance,field:'title','errors')}">
                         <input class="createpost" type="text" id="title" maxlength="50" name="title" value="${fieldValue(bean:postInstance,field:'title')}"/>
                     </span>
-					<p class="posttitle"> Asking Price*</p>
+					<p class="posttitle">Price</p>
                     <input class="createpost" type="text" id="price" name="price" value="${fieldValue(bean:postInstance,field:'price')}"/>
-					<p class="posttitle">Description*</p>
+					<p class="posttitle">Description</p>
                     <span class="value ${hasErrors(bean:postInstance,field:'description','errors')}">
                         <g:textArea class="createpost" id="description" name="description" value="${fieldValue(bean:postInstance,field:'description')}" rows="5" cols="40"/>
                     </span>
-					<p class="posttitle">Telephone Number* &#40xxx-xxx-xxxx&#41</p>
+					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
                     <span class="value ${hasErrors(bean:postInstance,field:'phone','errors')}">
                         <input class="createpost" type="text" id="phone" name="phone" value="${fieldValue(bean:postInstance,field:'phone')}"/>
                     </span>
@@ -82,7 +82,7 @@
 				</g:form>
 			</div>
 			<div class="rightside">
-				<p class="asterisk">Fields marked with * are required.</p>
+				<p class="asterisk"></p>
 			</div>
 		</div>
 

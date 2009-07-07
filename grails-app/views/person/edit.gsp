@@ -24,15 +24,15 @@
 				<g:form class="leftside" action="update">
 					<input type="hidden" name="id" value="${person.id}" />
 					<input type="hidden" name="version" value="${person.version}" />
-					<p class="posttitle">Email Address*</p>
+					<p class="posttitle">Email Address</p>
                     <span class="value ${hasErrors(bean:person,field:'email','errors')}">
                         <input class="createpost" type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
                     </span>
-					<p class="posttitle">First Name*</p>
+					<p class="posttitle">First Name</p>
                     <span class="value ${hasErrors(bean:person,field:'firstName','errors')}">
                         <input class="createpost" type="text" id="firstName" name="firstName" value="${person.firstName?.encodeAsHTML()}"/>
                     </span>
-					<p class="posttitle">Last Name*</p>
+					<p class="posttitle">Last Name</p>
                     <span class="value ${hasErrors(bean:person,field:'lastName','errors')}">
                         <input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
                     </span>
@@ -50,7 +50,7 @@
 			</div>
             <!--
 			<div class="rightside">
-				<p class="asterisk">Fields marked with * are required.</p>
+				<p class="asterisk"></p>
 			</div>
             -->
 		</div>

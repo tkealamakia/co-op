@@ -19,19 +19,19 @@
                     </div>
 				</g:hasErrors>
 				<g:form class="leftside" action="save">
-					<p class="posttitle">Email Address*</p>
+					<p class="posttitle">Email Address</p>
                     <input class="createpost" type="text" name='email' value="${person?.email?.encodeAsHTML()}"/>
-					<p class="posttitle">First Name*</p>
+					<p class="posttitle">First Name</p>
                     <input class="createpost" type="text" name='firstName' value="${person?.firstName?.encodeAsHTML()}"/>
-					<p class="posttitle">Last Name*</p>
+					<p class="posttitle">Last Name</p>
                     <input class="createpost" type="text" name='lastName' value="${person?.lastName?.encodeAsHTML()}"/>
-					<p class="posttitle">Password*</p>
+					<p class="posttitle">Password</p>
                     <input class="createpost" type="password" name='passwd' value="${person?.passwd?.encodeAsHTML()}"/>
-					<p class="posttitle">Confirm Password*</p>
+					<p class="posttitle">Confirm Password</p>
                     <input class="createpost" type="password" name='repasswd' value="${person?.passwd?.encodeAsHTML()}"/>
 					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
                     <input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
-					<p class="posttitle">Enter Code Below*</p>
+					<p class="posttitle">Enter Code Below</p>
                     <input class="createpost" type="text" name="captcha" size="8"/>
 					<img src="${createLink(controller:'captcha', action:'index')}" align="absmiddle"/>
 					
@@ -45,7 +45,7 @@
 				</g:form>
 			</div>
 			<div class="rightside">
-				<p class="asterisk">Fields marked with * are required.</p>
+				<p class="asterisk"></p>
 			</div>
 		</div>
 
