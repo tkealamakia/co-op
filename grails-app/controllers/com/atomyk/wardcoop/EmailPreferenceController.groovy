@@ -13,21 +13,28 @@ class EmailPreferenceController {
         def person = Person.findByEmail(email)
 
         def categoryList = Category.findAll()
-        [ categoryList: categoryList ]
+        [ categoryList: categoryList, categorySelectedList: person.categories]
     }
 
     def save = {
 
         def categoryList = Category.findAll()
 
-        /*
-        params.each() {
-            def param = it
-            categoryList.each() { 
+        // Get current user
+        def user = authenticateService.principal()
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
 
+        categoryList.each() { 
+            if (request.getParameter(it.name) == 'on') {
+                person.categories.add(it)
+            }
+            else {
+                person.categories.remove(it)
             }
         }
-        */
-
+        flash.message = "E-mail Preferences successfully updated."
+        redirect(controller:"person", action:"edit")
     }
+
 }

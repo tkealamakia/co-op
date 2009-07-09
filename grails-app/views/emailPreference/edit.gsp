@@ -16,7 +16,12 @@
 				<g:form action="save">
                     <g:each in="${categoryList}" status="i" var="category">
                         <div class="checkboxandtitle">
-                            <div class="emailcheckbox"><input type="checkbox" name="${category.name}" />
+                            <div class="emailcheckbox">
+                                <input type="checkbox" name="${category.name}" 
+                                       <g:if test="${categorySelectedList.contains(category)}">
+                                       checked
+                                       </g:if>
+                                />
                             </div>
                             <div class="emailtitle">${category.name}
                             </div>

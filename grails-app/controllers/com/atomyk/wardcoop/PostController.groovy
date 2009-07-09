@@ -2,8 +2,8 @@ package com.atomyk.wardcoop
 
 class PostController {
     
-    
     def authenticateService
+	def emailerService
     
     def index = { redirect(action:list,params:params) }
 
@@ -283,6 +283,11 @@ class PostController {
 		            image3.save()
 	        }
 	            
+            def peopleToNotify = category.people
+            peopleToNotify.each() {
+                sendEmail(it, category)
+            }
+
             flash.message = "Your post was successfully created"
             redirect(action:listByUser)
             
@@ -291,4 +296,24 @@ class PostController {
             render(view:'create',model:[postInstance:postInstance])
         }
     }
+
+    private sendEmail(person, category) {
+		def config = authenticateService.securityConfig
+        if (config.security.useMail) {
+            String emailContent = """A '${category.name}' Co-op item has been posted:
+
+${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
+
+"""
+
+            def email = [
+                to: [person.email], // 'to' expects a List, NOT a single email address
+                subject: "[${request.contextPath}] Co-op item posted",
+                text: emailContent // 'text' is the email body
+            ]
+            emailerService.sendEmails([email])
+        }
+    }
+
+
 }
