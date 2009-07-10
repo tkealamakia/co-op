@@ -10,3 +10,8 @@ Setup info
 3. Run the scripts/setup.sql into mysql
 4. Copy a my.cnf file to /etc and increase the max packet size
 5. Run: grails install-plugin http://www.arquetipos.co.cr/blog/files/grails-image-tools-1.0.4.zip
+6. Move the ~/.grails/1.1.1/projects/wardcoop/plugins/image-tools-1.0.4/src/groovy/ImageTool.groovy
+   to
+   ~/.grails/1.1.1/projects/wardcoop/plugins/image-tools-1.0.4/src/groovy/imagetool/ImageTool.groovy
+7. Modify ~/.grails/1.1.1/projects/wardcoop/plugins/image-tools-1.0.4/src/groovy/imagetool/ImageTool.groovy
+   and add: 'package imagetool' to the top line of the file.

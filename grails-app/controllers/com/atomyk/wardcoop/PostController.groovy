@@ -1,5 +1,7 @@
 package com.atomyk.wardcoop
 
+import imagetool.ImageTool
+
 class PostController {
     
     def authenticateService
@@ -271,10 +273,12 @@ class PostController {
 	        def image3 = new Image(params["image3"])
 	        image3.type = "image3"
 
+            /*
             def imageTool = new ImageTool()
             imageTool.load(imageMain.image)
             imageTool.thumbnail(640)
             imageTool.writeResult("/Users/tdk/smaller.640.jpg", "JPEG")
+            */
 
             imageMain
 	        if (imageMain.image.length > 0) {
