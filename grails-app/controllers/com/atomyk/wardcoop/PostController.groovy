@@ -270,6 +270,13 @@ class PostController {
 	        image2.type = "image2"
 	        def image3 = new Image(params["image3"])
 	        image3.type = "image3"
+
+            def imageTool = new ImageTool()
+            imageTool.load(imageMain.image)
+            imageTool.thumbnail(640)
+            imageTool.writeResult("/Users/tdk/smaller.640.jpg", "JPEG")
+
+            imageMain
 	        if (imageMain.image.length > 0) {
 		        imageMain.post = postInstance
 	            imageMain.save()

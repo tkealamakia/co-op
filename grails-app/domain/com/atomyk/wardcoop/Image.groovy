@@ -7,11 +7,12 @@ class Image {
         image type:'blob'
     }
     static constraints = {
-        image maxSize:10000000
+        image maxSize:30000000
     }
     */
     
     byte[] image
     String type
+
     
 }
