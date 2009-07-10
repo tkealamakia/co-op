@@ -8,3 +8,4 @@ Setup info
       3. mailPassword: c00pftw
 2. Setup mysql with root's password as 'asdfg'
 3. Run the scripts/setup.sql into mysql
+4. Copy a my.cnf file to /etc and increase the max packet size
