@@ -13,7 +13,9 @@
 			<div class="postpics">
                 <g:if test="${imageList[0] != null}">
 				<div class="bigpicture">
-                        <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
+                        <g:link controller="image" action="image" id="${imageList[0]?.id}" target="_blank">
+                            <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
+                        </g:link>
 				</div>
                 </g:if>
                 <g:else>
@@ -23,12 +25,16 @@
                 </g:else>
                 <g:if test="${imageList[1] != null}">
 				<div class="leftsmallpic">
-                        <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[1]?.id)}"/>
+                        <g:link controller="image" action="image" id="${imageList[1]?.id}" target="_blank">
+                            <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[1]?.id)}"/>
+                        </g:link>
 				</div>
                 </g:if>
                 <g:if test="${imageList[2] != null}">
 				<div class="rightsmallpic">
-                        <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[2]?.id)}"/>
+                        <g:link controller="image" action="image" id="${imageList[2]?.id}" target="_blank">
+                            <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[2]?.id)}"/>
+                        </g:link>
 				</div>
                 </g:if>
 				<div class="dateposted">

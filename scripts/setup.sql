@@ -18,4 +18,3 @@ insert into category values (7, 0, 7, 'Items Wanted');
 insert into category values (8, 0, 8, 'Help Request');
 insert into category values (9, 0, 9, 'Events');
 alter table image modify image longblob;
-

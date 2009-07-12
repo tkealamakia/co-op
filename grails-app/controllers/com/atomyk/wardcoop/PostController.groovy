@@ -207,14 +207,26 @@ class PostController {
 		        image3.type = "image3"
 		        if (imageMain?.image?.length > 0) {
 			        imageMain.post = postInstance
+                    def imageTool = new ImageTool()
+                    imageTool.load(imageMain.image)
+                    imageTool.thumbnail(640)
+                    imageMain.image = imageTool.getBytes("JPEG")
 		            imageMain.save()
 		        }
 		        if (image2?.image?.length > 0) {
 			        image2.post = postInstance
+                    def imageTool = new ImageTool()
+                    imageTool.load(image2.image)
+                    imageTool.thumbnail(640)
+                    image2.image = imageTool.getBytes("JPEG")
 		            image2.save()
 		        }
 		        if (image3?.image?.length > 0) {
 			        image3.post = postInstance
+                    def imageTool = new ImageTool()
+                    imageTool.load(image3.image)
+                    imageTool.thumbnail(640)
+                    image3.image = imageTool.getBytes("JPEG")
 		            image3.save()
 		        }
 		            
@@ -273,31 +285,37 @@ class PostController {
 	        def image3 = new Image(params["image3"])
 	        image3.type = "image3"
 
-            /*
-            def imageTool = new ImageTool()
-            imageTool.load(imageMain.image)
-            imageTool.thumbnail(640)
-            imageTool.writeResult("/Users/tdk/smaller.640.jpg", "JPEG")
-            */
-
-            imageMain
 	        if (imageMain.image.length > 0) {
 		        imageMain.post = postInstance
+                def imageTool = new ImageTool()
+                imageTool.load(imageMain.image)
+                imageTool.thumbnail(640)
+                imageMain.image = imageTool.getBytes("JPEG")
 	            imageMain.save()
 	        }
 	        if (image2.image.length > 0) {
-			        image2.post = postInstance
-		            image2.save()
+                image2.post = postInstance
+                def imageTool = new ImageTool()
+                imageTool.load(image2.image)
+                imageTool.thumbnail(640)
+                image2.image = imageTool.getBytes("JPEG")
+                image2.save()
 	        }
 	        if (image3.image.length > 0) {
-			        image3.post = postInstance
-		            image3.save()
+                image3.post = postInstance
+                def imageTool = new ImageTool()
+                imageTool.load(image3.image)
+                imageTool.thumbnail(640)
+                image3.image = imageTool.getBytes("JPEG")
+                image3.save()
 	        }
 	            
+            /*
             def peopleToNotify = category.people
             peopleToNotify.each() {
                 sendEmail(it, category)
             }
+            */
 
             flash.message = "Your post was successfully created"
             redirect(action:listByUser)
