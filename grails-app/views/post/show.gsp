@@ -49,7 +49,9 @@
 			</div>
 			
 			<div class="postcontent">
-                <g:link class="backbutton" action="listByUser"><img src="${resource(dir:'images', file:'back.gif')}" /></g:link>
+                <a href="javascript:history.go(-1)">
+                    <img src="${resource(dir:'images', file:'back.gif')}" />
+                </a>
 				<div class="posttitle">
 					${fieldValue(bean:postInstance, field:'title')}
 				</div>

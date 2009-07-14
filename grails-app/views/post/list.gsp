@@ -23,9 +23,9 @@
                 <div class="message">${flash.message}</div>
             </g:if>
 
-            <div class="list">
 
-            <!--This is where the code for post listing begins-->
+            <g:if test="${postInstanceList.size() > 0}">
+            <div class="list">
             <g:each in="${postInstanceList}" status="i" var="postInstance">
 			<div class="postlineitem">
 				<% def foundMainPhoto = false %>
@@ -65,6 +65,11 @@
             <!--This is where the code for post listing ends-->
 
             </div>
+            </g:if>
+            <g:else>
+                There are no posts to display that meet your search criteria
+            </g:else>
+
 
             <div class="paginateButtons">
                 <div class="pagenumbers">
