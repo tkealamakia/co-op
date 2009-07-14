@@ -2,6 +2,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main" />
+    <script type="text/javascript">
+        function open_win(url) {
+            window.open(url,'Picture',
+                'width=640,height=400,menubar=no,status=no, location=no,toolbar=no,scrollbars=no');
+        }
+    </script>
 </head>
 <body>
 		<div class="titlebar">
@@ -13,9 +19,9 @@
 			<div class="postpics">
                 <g:if test="${imageList[0] != null}">
 				<div class="bigpicture">
-                        <g:link controller="image" action="image" id="${imageList[0]?.id}" target="_blank">
-                            <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
-                        </g:link>
+                    <a href="javascript:void(0)" onclick="open_win('${createLink(controller:'image', action:'image', id:imageList[0]?.id)}')">
+                        <img class="largepic" src="${createLink(controller:'image', action:'image', id:imageList[0]?.id)}"/>
+                    </a>
 				</div>
                 </g:if>
                 <g:else>
@@ -25,16 +31,16 @@
                 </g:else>
                 <g:if test="${imageList[1] != null}">
 				<div class="leftsmallpic">
-                        <g:link controller="image" action="image" id="${imageList[1]?.id}" target="_blank">
+                        <a href="javascript:void(0)" onclick="open_win('${createLink(controller:'image', action:'image', id:imageList[1]?.id)}')">
                             <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[1]?.id)}"/>
-                        </g:link>
+                        </a>
 				</div>
                 </g:if>
                 <g:if test="${imageList[2] != null}">
 				<div class="rightsmallpic">
-                        <g:link controller="image" action="image" id="${imageList[2]?.id}" target="_blank">
+                        <a href="javascript:void(0)" onclick="open_win('${createLink(controller:'image', action:'image', id:imageList[2]?.id)}')">
                             <img class="smallpic" src="${createLink(controller:'image', action:'image', id:imageList[2]?.id)}"/>
-                        </g:link>
+                        </a>
 				</div>
                 </g:if>
 				<div class="dateposted">
