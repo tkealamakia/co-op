@@ -41,6 +41,10 @@
 		<div class="navigation">
 		</div>
 <!--This is where the header ends-->
+<!--Beginning of code for the title bar-->
+		<div class="titlebar">
+		</div>
+
 		<div class="leftarea">
 			<g:if test='${flash.message}'>
                 <div class='login_message'>${flash.message}</div>

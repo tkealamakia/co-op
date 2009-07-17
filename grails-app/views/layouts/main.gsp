@@ -38,11 +38,13 @@
 	        <g:layoutBody />		
 	        
             <!--Beginning of code for the advertising area on the right-->
-            <div class="adsright">
+            
+			<div class="adsright">
                 <a href="topad.html"><img class="topad" src="${resource(dir:'images', file:'bigad.gif')}" /></a>
-                <a href="sky160.html"><img class="leftad" src="${resource(dir:'images', file:'sky160.gif')}" /></a>
-                <a href="sky120.html"><img class="rightad" src="${resource(dir:'images', file:'sky120.gif')}" /></a>
+                <!--<a href="sky160.html"><img class="leftad" src="${resource(dir:'images', file:'sky160.gif')}" /></a>
+                <a href="sky120.html"><img class="rightad" src="${resource(dir:'images', file:'sky120.gif')}" /></a>-->
             </div>
+
 			<div class="footer">
 				<div class="copyright">
 					Copyright Co-op.com 2009
