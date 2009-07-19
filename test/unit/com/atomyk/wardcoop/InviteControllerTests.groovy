@@ -1,6 +1,8 @@
+package com.atomyk.wardcoop
+
 import grails.test.*
 
-class MainControllerTests extends ControllerUnitTestCase {
+class InviteControllerTests extends ControllerUnitTestCase {
     protected void setUp() {
         super.setUp()
     }
