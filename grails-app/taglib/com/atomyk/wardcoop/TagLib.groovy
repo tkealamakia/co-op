@@ -4,6 +4,8 @@ import com.atomyk.wardcoop.Category
 
 class TagLib {
 
+    def authenticateService
+
     static namespace = "tags"
     def menuBar = { attrs ->
         out << "<div class='navigation'>"
@@ -25,6 +27,13 @@ class TagLib {
         else {
             out << attrs.value
         }
+    }
+
+    def groupName = { attrs ->
+        def user = authenticateService.principal()
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
+        out << person.ward.name
     }
 
 }
