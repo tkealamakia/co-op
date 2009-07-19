@@ -2,11 +2,13 @@ package com.atomyk.wardcoop
 
 import com.atomyk.wardcoop.Category
 
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_ADMIN'])
 class CategoryController {
     
     def index = { redirect(action:list,params:params) }
 
-    // the delete, save and update actions only accept POST requests
     static allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {

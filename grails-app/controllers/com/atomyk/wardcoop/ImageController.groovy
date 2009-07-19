@@ -1,5 +1,8 @@
 package com.atomyk.wardcoop
 
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_ADMIN'])
 class ImageController {
     
     def index = { redirect(action:list,params:params) }
@@ -97,6 +100,7 @@ class ImageController {
         }
     }
     
+    @Secured(['ROLE_USER'])
     def image= {
         def obj = Image.get( params.id )
         byte[] image = obj.image

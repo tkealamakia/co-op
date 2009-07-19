@@ -3,6 +3,11 @@ package com.atomyk.wardcoop
 /**
  * Authority Controller.
  */
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+/**
+ * User controller.
+ */
+@Secured(['ROLE_ADMIN'])
 class AuthorityController {
 
 	// the delete, save and update actions only accept POST requests

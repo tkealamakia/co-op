@@ -3,6 +3,9 @@ package com.atomyk.wardcoop
 /**
  * Logout Controller (Example).
  */
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_USER'])
 class LogoutController {
 
 	/**

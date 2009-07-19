@@ -25,14 +25,14 @@ class AuthTagLib {
 	// Execute main body only if the user is logged in
 	def ifLoggedIn = {attrs, body ->
 		if (getUserName()) {
-			body{}
+			out << body{}
 		}
 	}
 
 	// Execute main body only if the user is NOT logged in
 	def ifNotLoggedIn = {attrs, body ->
 		if (!getUserName()) {
-			body{}
+			out << body{}
 		}
 	}
 
@@ -47,7 +47,7 @@ class AuthTagLib {
 	// Execute main body only if the user is logged in and has none of the roles requested
 	def ifUserHasNoRole = {attrs, body ->
 		if (!userHasOneOfRequiredRoles(attrs.roles.split(/,/))) {
-			return body{}
+			out << body{}
 		}
 	}
 
@@ -77,7 +77,7 @@ class AuthTagLib {
 		 	}
 		}
 		if (userIsGood) {
-			return body{}
+			out << body{}
 		}
 	}
 

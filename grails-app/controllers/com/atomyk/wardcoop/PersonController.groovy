@@ -1,8 +1,8 @@
 package com.atomyk.wardcoop
 
-/**
- * User controller.
- */
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_USER'])
 class PersonController {
 
 	def authenticateService
@@ -15,7 +15,7 @@ class PersonController {
 		redirect action: edit, params: params
 	}
 
-	/*
+    @Secured(['ROLE_ADMIN'])
 	def list = {
 		if (!params.max) {
 			params.max = 10
@@ -23,41 +23,12 @@ class PersonController {
 		[personList: Person.list(params)]
 	}
 
-	def show = {
-		def person = Person.get(params.id)
-		if (!person) {
-			flash.message = "Person not found with id $params.id"
-			redirect action: list
-			return
-		}
-		List roleNames = []
-		for (role in person.authorities) {
-			roleNames << role.authority
-		}
-		roleNames.sort { n1, n2 ->
-			n1 <=> n2
-		}
-		[person: person, roleNames: roleNames]
-	}
-	
-	def show = {
-        // Get current user
-        def user = authenticateService.principal() 
-        def email = user?.getEmail()
-        def person = Person.findByEmail(email)
-        
-		if (!person) {
-			flash.message = "Person not found with id $params.id"
-			redirect action: list
-			return
-		}
-		[person: person]
-	}
-	*/
 
 	/**
 	 * Person delete action. Before removing an existing person,
 	 * he should be removed from those authorities which he is involved.
+	 */
+    @Secured(['ROLE_ADMIN'])
 	def delete = {
 
 		def person = Person.get(params.id)
@@ -78,7 +49,6 @@ class PersonController {
 
 		redirect action: list
 	}
-	 */
 
 	def edit = {
         // Get current user

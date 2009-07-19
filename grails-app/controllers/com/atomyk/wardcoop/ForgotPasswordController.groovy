@@ -9,7 +9,7 @@ class ForgotPasswordController {
 	def emailerService
 
 
-	static Map allowedMethods = [updatePassword: 'POST']
+	static Map allowedMethods = [updatePassword: 'POST', sendForgotPassword: 'POST']
 
 
     def editForgotPassword = {}
@@ -92,7 +92,6 @@ class ForgotPasswordController {
     }
 
 
-
     String getRandomToken(length) {
         // create the list of available characters
         def availChars = []
@@ -100,16 +99,12 @@ class ForgotPasswordController {
         // even it out to about the same odds of getting a char or a number
         3.times { (0..9).each { availChars << it.toString() } }
 
-        //def generateRandomString = {
-          def max = availChars.size
-          def rnd = new Random()
-          def sb = new StringBuilder()
-          length.times { sb.append(availChars[rnd.nextInt(max)]) }
-          sb.toString()
-        //}
+        def max = availChars.size
+        def rnd = new Random()
+        def sb = new StringBuilder()
+        length.times { sb.append(availChars[rnd.nextInt(max)]) }
+        sb.toString()
 
-        //generateRandomString()
-        
     }
 
 

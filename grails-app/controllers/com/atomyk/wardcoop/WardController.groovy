@@ -2,6 +2,9 @@
 
 package com.atomyk.wardcoop
 
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_USER'])
 class WardController {
     
     def index = { redirect(action:list,params:params) }
@@ -18,7 +21,7 @@ class WardController {
         [ wardInstanceList: Ward.findByNameLike("%${searchTerm}%"), wardInstanceTotal: Ward.count() ]
     }
     
-    /*
+    @Secured(['ROLE_ADMIN'])
     def show = {
         def wardInstance = Ward.get( params.id )
 
@@ -29,6 +32,7 @@ class WardController {
         else { return [ wardInstance : wardInstance ] }
     }
 
+    @Secured(['ROLE_ADMIN'])
     def delete = {
         def wardInstance = Ward.get( params.id )
         if(wardInstance) {
@@ -47,8 +51,8 @@ class WardController {
             redirect(action:list)
         }
     }
-    */
 
+    @Secured(['ROLE_ADMIN'])
     def edit = {
         def wardInstance = Ward.get( params.id )
 
@@ -61,6 +65,7 @@ class WardController {
         }
     }
 
+    @Secured(['ROLE_ADMIN'])
     def update = {
         def wardInstance = Ward.get( params.id )
         if(wardInstance) {

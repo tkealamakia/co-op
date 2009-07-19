@@ -42,8 +42,5 @@
 			</table>
 		</div>
 
-		<div class="paginateButtons">
-			<g:paginate total="${Authority.count()}" />
-		</div>
 	</div>
 </body>

@@ -1,6 +1,11 @@
 package com.atomyk.wardcoop
 
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_USER'])
 class InviteController {
+
+    static allowedMethods = [sendInvites:'POST']
 
 	def emailerService
 	def authenticateService

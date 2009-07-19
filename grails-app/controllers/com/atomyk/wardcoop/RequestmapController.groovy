@@ -5,6 +5,9 @@ import org.springframework.util.StringUtils
 /**
  * Requestmap controller.
  */
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_ADMIN'])
 class RequestmapController {
 
 	def authenticateService

@@ -2,6 +2,9 @@ package com.atomyk.wardcoop
 
 import imagetool.ImageTool
 
+import org.codehaus.groovy.grails.plugins.springsecurity.Secured
+
+@Secured(['ROLE_USER'])
 class PostController {
     
     def authenticateService
@@ -10,7 +13,7 @@ class PostController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    static allowedMethods = [save:'POST', update:'POST']
+    static allowedMethods = [save:'POST', update:'POST', search:'POST']
 
     def listByUser = {
         // Get current user

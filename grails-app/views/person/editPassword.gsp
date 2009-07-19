@@ -32,7 +32,7 @@
 					<div class="savecancelbuttons">
 
 						<input class="savenewpost" type="image" src="${resource(dir:'images', file:'save.gif')}" />
-						<a class="cancel" href="cancel.html"><img src="${resource(dir:'images', file:'cancel.gif')}" /></a>
+						<g:link class="cancel" action="edit"><img src="${resource(dir:'images', file:'cancel.gif')}" /></g:link>
 					</div>
 				</g:form>
 			</div>
