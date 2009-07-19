@@ -1,4 +1,5 @@
 insert into authority values (1, 0, 'ROLE_USER', 'Default User');
+insert into authority values (2, 0, 'ROLE_ADMIN', 'Admin User');
 insert into requestmap values (1, 0, 'ROLE_ADMIN', '/requestmap/**');
 insert into requestmap values (2, 0, 'ROLE_ADMIN', '/authority/**');
 insert into requestmap values (3, 0, 'ROLE_USER', '/image/**');

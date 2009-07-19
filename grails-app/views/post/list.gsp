@@ -42,8 +42,10 @@
 				<% } %>
 
 				<div class="editdelete">
-					<!--<g:link class="brownlink" action="edit" id="${postInstance.id}">Edit</g:link><br />-->
-					<!--<g:link class="brownlink" onclick="return confirm('Are you sure?');" action="delete" id="${postInstance.id}">Delete</g:link>-->
+                    <g:ifUserHasRole roles="ROLE_ADMIN">
+                        <g:link class="brownlink" onclick="return confirm('Are you sure?');" action="delete" id="${postInstance.id}">Delete</g:link>
+                        <g:link class="brownlink" action="edit" id="${postInstance.id}">Edit</g:link>
+                    </g:ifUserHasRole>
 				</div>
 				<div class="postlistcontent">
 					<div class="postlisttitle"><g:link class="posttitle" action="show" id="${postInstance.id}">${fieldValue(bean:postInstance, field:'title')}</g:link>
