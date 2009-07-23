@@ -42,10 +42,12 @@ class InviteController {
 
             // Send an e-mail to the invitees
             if (config.security.useMail) {
+                Person person = PersonHelper.getCurrentUser(authenticateService)
                 String emailContent = """You have received an invitation to co-op.
 
+
     Please follow this link to register
-    ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/register/index
+    ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/register/index?group=${person.ward.name}
 
     """
 

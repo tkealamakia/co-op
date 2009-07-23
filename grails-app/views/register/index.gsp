@@ -19,6 +19,7 @@
                     </div>
 				</g:hasErrors>
 				<g:form class="leftside" action="save">
+                    <input type="hidden" name="groupName" value="${groupName}"/>
 					<p class="posttitle">Email Address</p>
                     <input class="createpost" type="text" name='email' value="${person?.email?.encodeAsHTML()}"/>
 					<p class="posttitle">First Name</p>

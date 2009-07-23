@@ -17,9 +17,7 @@ class PostController {
 
     def listByUser = {
         // Get current user
-        def user = authenticateService.principal() 
-        def email = user?.getUsername()
-        def person = Person.findByEmail(email)
+       def person = PersonHelper.getCurrentUser(authenticateService)
 
         params.max = Math.min( params.max ? params.max.toInteger() : 2,  100)
         def count = Post.countByPerson( person )

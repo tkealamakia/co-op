@@ -22,14 +22,16 @@ class RegisterController {
 
 		// skip if already logged in
 		if (authenticateService.isLoggedIn()) {
-			redirect action: show
+			redirect(action:show)
 			return
 		}
 
 		if (session.id) {
 			def person = new Person()
 			person.properties = params
-			return [person: person]
+            def group = Ward.findByName(request.getParameter("group"))
+           
+			return [person: person, groupName: group.name]
             // this goes to index.gsp
 		}
 
@@ -44,12 +46,15 @@ class RegisterController {
 
 		// skip if already logged in
 		if (authenticateService.isLoggedIn()) {
-			redirect action: show
+			redirect(action:show)
 			return
 		}
 
 		def person = new Person()
 		person.properties = params
+
+        def ward = Ward.findByName(request.getParameter("groupName"))
+        person.ward = ward
 
 		def config = authenticateService.securityConfig
 		def defaultRole = config.security.defaultRole
@@ -84,8 +89,7 @@ class RegisterController {
 		def pass = authenticateService.encodePassword(params.passwd)
 		person.passwd = pass
 		person.enabled = true
-		def ward = Ward.findByName('Default')
-		person.ward = ward
+
 		if (person.save()) {
 			role.addToPeople(person)
             // Configured in acegi plugin directory

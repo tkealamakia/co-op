@@ -5,15 +5,14 @@ import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 @Secured(['ROLE_USER'])
 class EmailPreferenceController {
 
+	static Map allowedMethods = [save: 'POST']
+
     def authenticateService
 
     def index = { }
 
     def edit = {
-        // Get current user
-        def user = authenticateService.principal()
-        def email = user?.getUsername()
-        def person = Person.findByEmail(email)
+        def person = PersonHelper.getCurrentUser(authenticateService)
 
         def categoryList = Category.findAll()
         [ categoryList: categoryList, categorySelectedList: person.categories]
@@ -22,11 +21,7 @@ class EmailPreferenceController {
     def save = {
 
         def categoryList = Category.findAll()
-
-        // Get current user
-        def user = authenticateService.principal()
-        def email = user?.getUsername()
-        def person = Person.findByEmail(email)
+        def person = PersonHelper.getCurrentUser(authenticateService)
 
         categoryList.each() { 
             if (request.getParameter(it.name) == 'on') {

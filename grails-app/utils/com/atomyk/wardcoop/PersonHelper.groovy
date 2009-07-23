@@ -10,6 +10,7 @@ package com.atomyk.wardcoop
  * @author tdk
  */
 class PersonHelper {
+
     static Person getCurrentUser(authenticateService) {
         def user = authenticateService.principal() 
         def email = user?.getUsername()
