@@ -1,7 +1,7 @@
 package com.atomyk.wardcoop
 
 class Post {
-    static belongsTo = [person:Person, category:Category]
+    static belongsTo = [person:Person, category:Category, ward:Ward]
     static hasMany = [images: Image]
     static mapping = {
         columns {

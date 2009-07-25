@@ -36,4 +36,10 @@ class TagLib {
         out << person.ward.name
     }
 
+    def expired = { attrs ->
+        if (new Date(attrs.value.getTime()) < new Date() - Constants.DAYS_FOR_POST_EXPIRE) {
+            out << "(Expired)"
+        }
+    }
+
 }

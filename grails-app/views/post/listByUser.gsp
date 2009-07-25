@@ -47,6 +47,7 @@
 							${fieldValue(bean:postInstance, field:'price')}
 						</div>
 						<div class="postdate">
+                            <tags:expired value="${postInstance.postDate}" />
                             <g:formatDate format="MMMM dd, yyyy" date="${postInstance.postDate}" />
 						</div>
 					</div>

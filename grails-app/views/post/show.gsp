@@ -16,6 +16,9 @@
 		</div>
         <!--Beginning of code for the title bar-->
 		<div class="leftarea">
+            <g:if test="${flash.message}">
+                <div class="message">${flash.message}</div>
+            </g:if>
 			<div class="postpics">
                 <g:if test="${imageList[0] != null}">
 				<div class="bigpicture">
@@ -74,7 +77,7 @@
 					${fieldValue(bean:postInstance.person, field:'email')}
 				</div>
 				<div class="flaglinks">
-					<div class="backbutton"><a href="flag.html"><img src="${resource(dir:'images', file:'flag.gif')}" /></a>
+					<div class="backbutton"><g:link action="flagPost" id="${postInstance.id}" onclick="return confirm('Are you sure?');"><img src="${resource(dir:'images', file:'flag.gif')}" /></g:link>
 					</div>
 					<div class="flagexplain">
 					<a class="brownlink" href="flagexplain.html">What's this for?</a>

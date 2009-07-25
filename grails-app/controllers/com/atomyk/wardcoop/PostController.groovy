@@ -16,8 +16,7 @@ class PostController {
     static allowedMethods = [save:'POST', update:'POST', search:'POST']
 
     def listByUser = {
-        // Get current user
-       def person = PersonHelper.getCurrentUser(authenticateService)
+        def person = PersonHelper.getCurrentUser(authenticateService)
 
         params.max = Math.min( params.max ? params.max.toInteger() : 2,  100)
         def count = Post.countByPerson( person )
@@ -30,20 +29,27 @@ class PostController {
     }
 
     def list = {
-        // Get current category
 		def categoryId = params.id
 		def category = Category.findById( categoryId )
 
-        params.max = Math.min( params.max ? params.max.toInteger() : 2,  100 )
+        def person = PersonHelper.getCurrentUser(authenticateService)
+        def ward = person.ward
 
-        def count = Post.countByCategory( category )
-        def postList = Post.findAllByCategory( category, params )
+
+        //def count = Post.countByCategoryAndWard( category, ward )
+        //def postList = Post.findAllByCategoryAndWard( category, ward, params )
+        def postList = Post.withCriteria {
+			eq('category', category)
+			eq('ward', ward)
+            between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
+		}
         
         if ( postList == null ) {
             postList = new ArrayList()
         }
 
-        [ postInstanceList: postList, postInstanceTotal: count,
+        params.max = Math.min( params.max ? params.max.toInteger() : 2,  100 )
+        [ postInstanceList: postList, postInstanceTotal: postList.count(),
 		  category: category ]
     }
 
@@ -54,6 +60,7 @@ class PostController {
 
         def postList = Post.withCriteria {
 			eq('category', category)
+            between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
 			or {
 				like("title", "%${searchStr}%")
 				like("description", "%${searchStr}%")
@@ -275,7 +282,9 @@ class PostController {
         postInstance.person = person
         
         def category = Category.findById(params.category.id)
+        def ward = Ward.findById(person.ward.id)
         postInstance.category = category
+        postInstance.ward = ward
         
         if(!postInstance.hasErrors() && postInstance.save()) {
             
@@ -325,6 +334,26 @@ class PostController {
         else {
             render(view:'create',model:[postInstance:postInstance])
         }
+    }
+
+    def flagPost = {
+		def config = authenticateService.securityConfig
+        if (config.security.useMail) {
+            String emailContent = """A Co-op item has been flagged as inappropriate
+            Post Id: ${params.id}
+"""
+
+            def email = [
+                to: [Constants.FLAG_POST_EMAIL], // 'to' expects a List, NOT a single email address
+                subject: "Co-op item flagged",
+                text: emailContent // 'text' is the email body
+            ]
+            emailerService.sendEmails([email])
+        }
+        flash.message = "Administrator has been notified."
+        redirect(action:show, id:params.id)
+
+
     }
 
     private sendEmail(person, category) {
