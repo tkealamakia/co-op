@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<title>Co-op.com: Building Community Unity</title>
+<title>Co-opCommunity.com: Building Community Unity</title>
 <link rel="stylesheet" href="${resource(dir:'css',file:'wardcoop.css')}" />
 </head>
 <body>
@@ -12,7 +12,7 @@
             <div class="logo"><a href="${resource(dir:'')}"><img src="${resource(dir:'images',file:'logo2.gif')}" /></a>
 			</div>
 			<div class="logotextwardname">
-				<div class="logotext"><a class="logotext" href="index.html">Co-op.com</a>
+				<div class="logotext"><a class="logotext" href="index.html">Co-opCommunity.com</a>
 				</div>
 			</div>
 			<div class="linkbox">
@@ -45,16 +45,46 @@
 		<div class="titlebar">
 		</div>
 
-		<div class="leftarea">
+		<div class="leftareahome">
 			<g:if test='${flash.message}'>
                 <div class='login_message'>${flash.message}</div>
 			</g:if>
-            <p class="emailexplanation">I see this as the home page for the site, so it should be full of informative, interactive, convincing stuff. Since creating that promotional content will take some time and shoud not requre back-end development, I figured I'd put this text here for a place holder for the fun things to come.</p>
+            <h1 class="top">Free, Private, Community Co-ops</h1>
+				<p class="hometext">Turn your community or group into a thriving community with Co-opCommunity.com. Your community co-op will give the members of your community the perfect way to inform everyone of opportunities that might otherwise go unkonwn. Here are some of the things you might post for everyone in your community to see:</p>
+				<ul>
+					<li>Free Stuff</li>
+					<li>For Sale</li>
+					<li>For Rent</li>
+					<li>For Trade</li>
+					<li>Items Wanted</li>
+					<li>Services</li>
+					<li>Jobs / Hiring</li>
+					<li>Share Resources</li>
+					<li>Events</li>
+				</ul>
+				<h1>Who is Co-opCommunity.com for?</h1>
+				<p class="hometext">Co-opCommunity.com can help any community or group take interaction to a new level. Here are a few examples of groups that can benefit from a community co-op:</p>
+				<ul>
+					<li>Neighborhoods</li>
+					<li>Planned Communities</li>
+					<li>Church Groups</li>
+					<li>Clubs</li>
+					<li>Companies</li>
+					<li>Any Other Group</li>
+				</ul>
+				<h1>Can I create a Community Co-op?</h1>
+				<p class="hometext">Once you have been invited by a member of a co-op, you can either join an existing co-op or create a new one. Simply    
+follow the link in your invitation email and create a new group. If you have not been invited to Co-opCommunity.com and you
+would like to create a co-op, just email request@co-opCommunity.com.</p>
 		</div>
+		<div class="adsright">
+                <div class="hometitleright"><div class="hometitlerighttext">Helping Communities Thrive</div></div>
+				<img class="topad" src="/wardcoop/images/hometiles.gif" />
+				</div>
 
 		<div class="footer">
 			<div class="copyright">
-			Copyright Co-op.com 2009
+			Copyright Co-opCommunity.com 2009
 			</div>
 		</div>
 	</div>

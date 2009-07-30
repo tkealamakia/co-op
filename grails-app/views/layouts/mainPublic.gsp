@@ -24,7 +24,7 @@
 	        
 			<div class="footer">
 				<div class="copyright">
-					Copyright Co-op.com 2009
+					Copyright Co-opCommunity.com 2009
 				</div>
 			</div>
 			

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title><g:layoutTitle default="Co-op.com: Building Community Unity" /></title>
+        <title><g:layoutTitle default="Co-opCommunity.com: Building Community Unity" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'wardcoop.css')}" />
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />
@@ -47,7 +47,7 @@
 
 			<div class="footer">
 				<div class="copyright">
-					Copyright Co-op.com 2009
+					Copyright Co-opCommunity.com 2009
 				</div>
 			</div>
 			
