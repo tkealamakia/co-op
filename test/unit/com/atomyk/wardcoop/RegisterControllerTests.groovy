@@ -16,6 +16,10 @@ class RegisterControllerTests extends ControllerUnitTestCase {
         mockDomain(Person)
         mockService(AuthenticateService)
 
+		def authService = mockFor(AuthenticateService)
+		//otherControl.demand.newIdentifier(1..1) {-> return testId }
+
+
         mockParams.email = "tkealamakia@gmail.com"
         mockParams.firstName = "Tom"
         mockParams.lastName = "Kealamakia"

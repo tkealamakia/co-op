@@ -12,7 +12,7 @@ class PostController {
     
     def index = { redirect(action:list,params:params) }
 
-    // the delete, save and update actions only accept POST requests
+    // the save and update actions only accept POST requests
     static allowedMethods = [save:'POST', update:'POST']
 
     def listByUser = {
@@ -35,9 +35,6 @@ class PostController {
         def person = PersonHelper.getCurrentUser(authenticateService)
         def ward = person.ward
 
-
-        //def count = Post.countByCategoryAndWard( category, ward )
-        //def postList = Post.findAllByCategoryAndWard( category, ward, params )
         def postList = Post.withCriteria {
             if (params.max) {
                 maxResults(new Integer(params.max))
@@ -48,6 +45,7 @@ class PostController {
 			eq('category', category)
 			eq('ward', ward)
             between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
+            order("postDate", "desc")
 		}
 
         // Only used to get the count for the result set
@@ -67,6 +65,9 @@ class PostController {
     }
 
 	def search = {
+        def person = PersonHelper.getCurrentUser(authenticateService)
+        def ward = person.ward
+
 		def categoryId = params.id
         def category = null
         if (categoryId) {
@@ -83,6 +84,7 @@ class PostController {
             if (params.offset) {
                 firstResult(new Integer(params.offset))
             }
+			eq('ward', ward)
             if (category) {
                 eq('category', category)
             }
@@ -91,8 +93,10 @@ class PostController {
 				like("title", "%${searchStr}%")
 				like("description", "%${searchStr}%")
 			}
+            order("postDate", "desc")
 		}
         def postListCounter = Post.withCriteria {
+			eq('ward', ward)
             if (category) {
                 eq('category', category)
             }
@@ -148,16 +152,7 @@ class PostController {
     def delete = {
         def postInstance = Post.get( params.id )
 
-        //Only allow current user to delete their own posts
-        def user = authenticateService.principal()
-        def email = user?.getUsername()
-        def person = Person.findByEmail(email)
-
-        if(person.id != postInstance?.person?.id) {
-            println "in here"
-            flash.message = "You are not allowed to perform this operation"
-            //TODO figure a better way to handle this.  For some reason
-            // a redirect is still deleting the post!
+        if (!isAuthorized(postInstance)) {
             return
         }
 
@@ -178,10 +173,14 @@ class PostController {
         }
     }
     
-    //TODO only allow current user to delete their own images
     def deleteImage = {
         def imageInstance = Image.get( params.id )
         def post = imageInstance.post
+
+        if (!isAuthorized(post)) {
+            return
+        }
+
         if(imageInstance) {
             try {
                 imageInstance.delete(flush:true)
@@ -202,6 +201,9 @@ class PostController {
 
     def edit = {
         def postInstance = Post.get( params.id )
+        if (!isAuthorized(postInstance)) {
+            return
+        }
 
         if(!postInstance) {
             flash.message = "Post not found "
@@ -229,6 +231,11 @@ class PostController {
 
     def update = {
         def postInstance = Post.get( params.id )
+
+        if (!isAuthorized(postInstance)) {
+            return
+        }
+
         if(postInstance) {
             if(params.version) {
                 def version = params.version.toLong()
@@ -402,11 +409,24 @@ ${request.scheme}://${request.serverName}:${request.serverPort}${request.context
 
             def email = [
                 to: [person.email], // 'to' expects a List, NOT a single email address
-                subject: "[${request.contextPath}] Co-op item posted",
+                subject: "Co-op item posted",
                 text: emailContent // 'text' is the email body
             ]
             emailerService.sendEmails([email])
         }
+    }
+
+    private boolean isAuthorized(post) {
+        def user = authenticateService.principal()
+        def email = user?.getUsername()
+        def person = Person.findByEmail(email)
+
+        if(person.id != post?.person?.id) {
+            flash.message = "You are not allowed to perform this operation"
+            return false
+        }
+        return true
+        
     }
 
 

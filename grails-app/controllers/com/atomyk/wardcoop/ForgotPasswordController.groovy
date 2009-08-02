@@ -34,7 +34,7 @@ class ForgotPasswordController {
 
 				def email = [
 					to: [person.email], // 'to' expects a List, NOT a single email address
-					subject: "[${request.contextPath}] Forgot Password",
+					subject: "Co-op Forgot Password",
 					text: emailContent // 'text' is the email body
 				]
 				emailerService.sendEmails([email])
