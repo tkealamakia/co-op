@@ -8,10 +8,10 @@
 		<div class="titlebar">
 			<div class="title">Categories</div>
 			<div class="searchbox2">
-				<form class="searchbox" action="">
-				<input type="text" name="searchbox" class="searchbox" />
-				<input type="image" class="searchbutton" src="${resource(dir:'images',file:'search.gif')}" />
-				</form>
+				<g:form class="searchbox" controller="post" action="search" method="post">
+					<input type="text" name="searchStr" class="searchbox" />
+					<input type="image" class="searchbutton" src="${resource(dir:'images', file:'search.gif')}" />
+				</g:form>
 			</div>
 		</div>
 		<div class="leftarea">

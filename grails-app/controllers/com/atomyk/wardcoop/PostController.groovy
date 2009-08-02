@@ -13,12 +13,12 @@ class PostController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    static allowedMethods = [save:'POST', update:'POST', search:'POST']
+    static allowedMethods = [save:'POST', update:'POST']
 
     def listByUser = {
         def person = PersonHelper.getCurrentUser(authenticateService)
 
-        params.max = Math.min( params.max ? params.max.toInteger() : 2,  100)
+        params.max = Math.min( params.max ? params.max.toInteger() : Constants.MAX_PER_PAGE,  100)
         def count = Post.countByPerson( person )
         def postList = Post.findAllByPerson(person, params)
         if (postList == null) {
@@ -39,6 +39,19 @@ class PostController {
         //def count = Post.countByCategoryAndWard( category, ward )
         //def postList = Post.findAllByCategoryAndWard( category, ward, params )
         def postList = Post.withCriteria {
+            if (params.max) {
+                maxResults(new Integer(params.max))
+            }
+            if (params.offset) {
+                firstResult(new Integer(params.offset))
+            }
+			eq('category', category)
+			eq('ward', ward)
+            between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
+		}
+
+        // Only used to get the count for the result set
+        def postListCounter = Post.withCriteria {
 			eq('category', category)
 			eq('ward', ward)
             between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
@@ -48,18 +61,41 @@ class PostController {
             postList = new ArrayList()
         }
 
-        params.max = Math.min( params.max ? params.max.toInteger() : 2,  100 )
-        [ postInstanceList: postList, postInstanceTotal: postList.count(),
+        params.max = Math.min( params.max ? params.max.toInteger() : Constants.MAX_PER_PAGE,  100 )
+        [ postInstanceList: postList, postInstanceTotal: postListCounter.size(),
 		  category: category ]
     }
 
 	def search = {
 		def categoryId = params.id
-		def category = Category.findById(categoryId)
+        def category = null
+        if (categoryId) {
+            category = Category.findById(categoryId)
+        }
 		def searchStr = params.searchStr
 
         def postList = Post.withCriteria {
-			eq('category', category)
+            if (params.max) {
+                maxResults(new Integer(params.max))
+            } else {
+                maxResults(new Integer(Constants.MAX_PER_PAGE))
+            }
+            if (params.offset) {
+                firstResult(new Integer(params.offset))
+            }
+            if (category) {
+                eq('category', category)
+            }
+            between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
+			or {
+				like("title", "%${searchStr}%")
+				like("description", "%${searchStr}%")
+			}
+		}
+        def postListCounter = Post.withCriteria {
+            if (category) {
+                eq('category', category)
+            }
             between('postDate', new Date() - Constants.DAYS_FOR_POST_EXPIRE, new Date())
 			or {
 				like("title", "%${searchStr}%")
@@ -67,9 +103,8 @@ class PostController {
 			}
 		}
 
-        params.max = Math.min( params.max ? params.max.toInteger() : 10,  100)
-		render(view:'list',model:[ postInstanceList: postList,
-				postInstanceTotal: postList.count(), category: category ])
+        params.max = Math.min( params.max ? params.max.toInteger() : Constants.MAX_PER_PAGE,  100)
+		render(view:'search', model:[ postInstanceList: postList, postInstanceTotal: postListCounter.size(), category: category ])
 	}
 
     def show = {

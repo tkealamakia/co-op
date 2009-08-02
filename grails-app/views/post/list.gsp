@@ -76,7 +76,7 @@
             <div class="paginateButtons">
                 <div class="pagenumbers">
                     <g:paginate next="Forward" prev="Back" maxsteps="10"
-                            controller="post" action="list" id="${category.id}"
+                            controller="post" action="list" params="${params}"
                             total="${postInstanceTotal}" />
                 </div>
             </div>
