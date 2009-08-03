@@ -80,7 +80,9 @@
 					<div class="backbutton"><g:link action="flagPost" id="${postInstance.id}" onclick="return confirm('Are you sure?');"><img src="${resource(dir:'images', file:'flag.gif')}" /></g:link>
 					</div>
 					<div class="flagexplain">
-					<a class="brownlink" href="flagexplain.html">What's this for?</a>
+                        <a class="brownlink" href="javascript:void(0)" onclick="open_win('${createLink(action:'whatfor')}')">
+                            What's this for?
+                        </a>
 					</div>
 				</div>
 			</div>

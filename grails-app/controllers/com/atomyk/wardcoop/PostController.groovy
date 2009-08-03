@@ -398,6 +398,10 @@ class PostController {
 
     }
 
+    def whatfor = {
+
+    }
+
     private sendEmail(person, category) {
 		def config = authenticateService.securityConfig
         if (config.security.useMail) {
