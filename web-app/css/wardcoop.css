@@ -862,6 +862,7 @@ div.errors {
 }
 div.errors ul {
     list-style: none;
+    color: #ff0000;
     padding: 0;
 }
 div.errors li {

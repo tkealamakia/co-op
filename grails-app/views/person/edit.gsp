@@ -7,9 +7,11 @@
 		<div class="titlebar">
 				<div class="title">My Account
 				</div>
+                <!--
 				<div class="emailpreferences">
 					<g:link class="white" controller="emailPreference" action="edit">Email Preferences</g:link>
 				</div>
+                -->
 			</div>
 		<div class="leftarea">
 			<div class="createpost">
@@ -36,8 +38,6 @@
                     <span class="value ${hasErrors(bean:person,field:'lastName','errors')}">
                         <input class="createpost" type="text" id="lastName" name="lastName" value="${person.lastName?.encodeAsHTML()}"/>
                     </span>
-					<p class="posttitle">Telephone Number &#40xxx-xxx-xxxx&#41</p>
-                        <input class="createpost" type="telephone" name='telephone' value="${person?.telephone?.encodeAsHTML()}"/>
 					<p class="posttitle">Group</p>
 					<p class="notopmargin">${person?.ward?.name}&nbsp; <g:link controller="ward" action="list" class="blacklink">Change</g:link></p>
 					<p class="posttitle">Password</p>

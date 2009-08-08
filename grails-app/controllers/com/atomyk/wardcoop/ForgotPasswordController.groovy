@@ -26,15 +26,14 @@ class ForgotPasswordController {
             // Send an e-mail with the proper link
             if (config.security.useMail) {
                 String emailContent = """You have requested a password change for
-
- The co-op application. Please follow this link to complete the process:
+ The ${Constants.APP_NAME} application. Please follow this link to complete the process:
  ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/forgotPassword/editPassword?token=${token}
 
 """
 
 				def email = [
 					to: [person.email], // 'to' expects a List, NOT a single email address
-					subject: "Co-op Forgot Password",
+					subject: "${Constants.APP_NAME} Forgot Password",
 					text: emailContent // 'text' is the email body
 				]
 				emailerService.sendEmails([email])

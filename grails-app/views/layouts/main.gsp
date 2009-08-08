@@ -28,6 +28,10 @@
 					<div class="toplinksright">
 						<div class="byinvitationonly">By Invitation Only</div>
                         <g:link class="white" controller="invite" action="create">Invite Someone</g:link>
+                        <!--
+                        <div class="byinvitationonly">&nbsp;</div>
+						<div class="byinvitationonly"><tags:userName/></div>
+                        -->
 					</div>
 				</div>
 			</div>

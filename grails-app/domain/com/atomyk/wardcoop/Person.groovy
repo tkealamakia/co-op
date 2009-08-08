@@ -15,7 +15,6 @@ class Person {
 	/** enabled */
 	boolean enabled
 	String email
-	String telephone
     String passwordResetToken
 
 

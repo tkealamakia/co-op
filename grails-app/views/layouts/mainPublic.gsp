@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title><g:layoutTitle default="WardCoOp.com - Building Community Unity" /></title>
+        <title><g:layoutTitle default="CoOpCommunity.com - Building Community Unity" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'wardcoop.css')}" />
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />

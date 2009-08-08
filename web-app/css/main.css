@@ -103,6 +103,7 @@ input:focus, select:focus, textarea:focus {
     padding: 5px 5px 5px 30px
 }
 
+/*
 div.errors {
     background: #fff3f3;
     border: 1px solid red;
@@ -126,6 +127,7 @@ td.errors select {
 td.errors input {
     border: 1px solid red;
 }
+*/
 
 /* TABLES */
 

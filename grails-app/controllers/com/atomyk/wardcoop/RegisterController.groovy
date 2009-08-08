@@ -29,9 +29,14 @@ class RegisterController {
 		if (session.id) {
 			def person = new Person()
 			person.properties = params
-            def group = Ward.findByName(request.getParameter("group"))
+            def group = null
+            def groupName = "Default"
+            if (request.getParameter("group") != null) {
+                group = Ward.findByName(request.getParameter("group"))
+                groupName = group?.name
+            }
            
-			return [person: person, groupName: group.name]
+			return [person: person, groupName: groupName]
             // this goes to index.gsp
 		}
 
@@ -54,6 +59,9 @@ class RegisterController {
 		person.properties = params
 
         def ward = Ward.findByName(request.getParameter("groupName"))
+        if (ward == null) {
+            ward = Ward.findByName("Default")
+        }
         person.ward = ward
 
 		def config = authenticateService.securityConfig
@@ -94,7 +102,7 @@ class RegisterController {
 			role.addToPeople(person)
             // Configured in acegi plugin directory
 			if (config.security.useMail) {
-				String emailContent = """You have signed up for an account at:
+				String emailContent = """You have signed up for a ${Constants.APP_NAME} account at:
 
  ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
 
@@ -108,7 +116,7 @@ class RegisterController {
 
 				def email = [
 					to: [person.email], // 'to' expects a List, NOT a single email address
-					subject: "[${request.contextPath}] Account Signed Up",
+					subject: "${Constants.APP_NAME} Account Signed Up",
 					text: emailContent // 'text' is the email body
 				]
 				emailerService.sendEmails([email])
@@ -119,7 +127,7 @@ class RegisterController {
 			def auth = new AuthToken(person.email, params.passwd)
 			def authtoken = daoAuthenticationProvider.authenticate(auth)
 			SCH.context.authentication = authtoken
-			redirect uri: '/'
+			redirect uri: '/home'
 		}
 		else {
 			person.passwd = ''
