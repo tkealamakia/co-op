@@ -63,36 +63,6 @@
                 </div>
             </div>
 			
-            <!--
-			<div class="pagination">
-				<div class="pagenumbers">
-				<a class="white" href="back.html">Back</a>
-				&nbsp;
-				<a class="white" href="one.html">1</a>
-				&nbsp;
-				<a class="white" href="two.html">2</a>
-				&nbsp;
-				<a class="white" href="three.html">3</a>
-				&nbsp;
-				<a class="white" href="four.html">4</a>
-				&nbsp;
-				<a class="white" href="five.html">5</a>
-				&nbsp;
-				<a class="white" href="six.html">6</a>
-				&nbsp;
-				<a class="white" href="seven.html">7</a>
-				&nbsp;
-				<a class="white" href="eight.html">8</a>
-				&nbsp;
-				<a class="white" href="nine.html">9</a>
-				&nbsp;
-				<a class="white" href="ten.html">10</a>
-				&nbsp;
-				<a class="white" href="next.html">Next</a>
-				</div>
-			</div>
-            -->
-			
 		</div>
 
 </body>

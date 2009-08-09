@@ -16,7 +16,7 @@
 				</g:form>
 					<p class="searchresults">Search Results:</p>
                     <g:each in="${wardInstanceList}" status="i" var="wardInstance">
-						<p class="topmargin">${fieldValue(bean:wardInstance, field:'name')}&nbsp;&nbsp;<g:link controller="person" action="edit" id="${wardInstance.id}" class="blacklink">Select</g:link></p>
+						<p class="topmargin">${fieldValue(bean:wardInstance, field:'name')}&nbsp;&nbsp;<g:link onclick="return confirm('Are you sure?  All of your posts with the former group will be deleted.');" controller="person" action="edit" id="${wardInstance.id}" class="blacklink">Select</g:link></p>
                     </g:each>
 			</div>
 			<div class="createpost">

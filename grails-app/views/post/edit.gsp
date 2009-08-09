@@ -42,7 +42,7 @@
 	                
 	            	<g:if test="${imageList[0] != null}">
 		                <p class="topmargin"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[0].id)}"/></p>
-						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[0].id}">Remove</g:link></p>
+						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure? Please save any changes you have made to the form before deleting this image.');" action="deleteImage" id="${imageList[0].id}">Remove</g:link></p>
 		                <br><br><br>
             		</g:if>
             		<g:else>
@@ -53,7 +53,7 @@
             		</g:else>
 	            	<g:if test="${imageList[1] != null}">
 		                <p class="topmargin"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[1].id)}"/></p>
-						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[1].id}">Remove</g:link></p>
+						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure? Please save any changes you have made to the form before deleting this image.');" action="deleteImage" id="${imageList[1].id}">Remove</g:link></p>
 		                <br><br><br>
             		</g:if>
             		<g:else>
@@ -64,7 +64,7 @@
             		</g:else>
 	            	<g:if test="${imageList[2] != null}">
 		                <p class="topmargin"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:imageList[2].id)}"/></p>
-						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure?');" action="deleteImage" id="${imageList[2].id}">Remove</g:link></p>
+						<p class="deletepic"><g:link class="brownlink" onclick="return confirm('Are you sure? Please save any changes you have made to the form before deleting this image.' );" action="deleteImage" id="${imageList[2].id}">Remove</g:link></p>
 		                <br><br><br>
             		</g:if>
             		<g:else>

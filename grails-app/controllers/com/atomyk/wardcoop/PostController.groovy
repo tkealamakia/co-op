@@ -318,9 +318,7 @@ class PostController {
         postInstance.postDate = new Date()
         
         // Get current user
-        def user = authenticateService.principal() 
-        def email = user?.getUsername()
-        def person = Person.findByEmail(email)
+        def person = PersonHelper.getCurrentUser(authenticateService)
         postInstance.person = person
         
         def category = Category.findById(params.category.id)
@@ -362,12 +360,13 @@ class PostController {
                 image3.save()
 	        }
 	            
-            /*
+
             def peopleToNotify = category.people
             peopleToNotify.each() {
-                sendEmail(it, category)
+                if (ward.id == it.ward.id) {
+                    sendEmail(it, category, postInstance.id)
+                }
             }
-            */
 
             flash.message = "Your post was successfully created"
             redirect(action:listByUser)
@@ -402,18 +401,18 @@ class PostController {
 
     }
 
-    private sendEmail(person, category) {
+    private sendEmail(person, category, id) {
 		def config = authenticateService.securityConfig
         if (config.security.useMail) {
-            String emailContent = """A '${category.name}' Co-op item has been posted:
+            String emailContent = """A ${Constants.APP_NAME} item of the category type ${category.name} has been posted:
 
-${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
+${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/post/show/${id}
 
 """
 
             def email = [
                 to: [person.email], // 'to' expects a List, NOT a single email address
-                subject: "Co-op item posted",
+                subject: "${Constants.APP_NAME} item posted",
                 text: emailContent // 'text' is the email body
             ]
             emailerService.sendEmails([email])

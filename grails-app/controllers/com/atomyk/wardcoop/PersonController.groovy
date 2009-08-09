@@ -56,9 +56,21 @@ class PersonController {
         
         // This means we are returning from a ward selection page
 	    if (params.id != null) {
-	        def ward = Ward.findById(params.id)
-	        person.ward = ward
-	        person.save()
+            def ward = Ward.findById(params.id)
+            if (person.ward != ward) {
+                // Person is changing groups, so delete all their old posts
+                person.posts.each() {
+                    def post = Post.get(it.id)
+
+                    person.posts.remove(it)
+                    post.ward.posts.remove(it)
+                    post.category.posts.remove(it)
+
+                    post.delete(flush:true)
+                }
+                person.ward = ward
+                person.save()
+            }
 	    }
 
 		if (!person) {
@@ -77,7 +89,6 @@ class PersonController {
 
     def updatePassword = {
         def person = PersonHelper.getCurrentUser(authenticateService)
-		person = Person.get(person.id)
 
         if (params.passwd != params.passwdConfirm) {
             flash.message = "Passwords do not match"
@@ -85,15 +96,15 @@ class PersonController {
             return
         }
 		else if (params.passwd.length() < 6) {
-			flash.message = 'The password you entered must be at least 6 characters.'
+			flash.message = 'The password you entered must be at least 6 characters'
             redirect action: editPassword
             return
 		}
         else {
 			person.passwd = authenticateService.encodePassword(params.passwd)
             if (!person.hasErrors() && person.save()) {
-                flash.message = "Password updated."
-                redirect action: edit, id: person.id
+                flash.message = "Password updated"
+                redirect action: edit
                 return
             }
             else {

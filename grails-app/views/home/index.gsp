@@ -18,31 +18,31 @@
 			<div class="categories">
 
 					<div class="leftcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile1.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/1?max=15"><img src="${resource(dir:'images',file:'categorytile1.gif')}" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile2.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/2?max=15"><img src="${resource(dir:'images',file:'categorytile2.gif')}" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile3.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/3?max=15"><img src="${resource(dir:'images',file:'categorytile3.gif')}" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile4.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/4?max=15"><img src="${resource(dir:'images',file:'categorytile4.gif')}" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile5.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/5?max=15"><img src="${resource(dir:'images',file:'categorytile5.gif')}" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile6.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/6?max=15"><img src="${resource(dir:'images',file:'categorytile6.gif')}" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile7.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/7?max=15"><img src="${resource(dir:'images',file:'categorytile7.gif')}" /> </a>
 					</div>
 					<div class="rightcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile8.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/8?max=15"><img src="${resource(dir:'images',file:'categorytile8.gif')}" /> </a>
 					</div>
 					<div class="leftcategory">
-						<a href="category.html"><img src="${resource(dir:'images',file:'categorytile9.gif')}" /> </a>
+						<a href="${request.contextPath}/post/list/9?max=15"><img src="${resource(dir:'images',file:'categorytile9.gif')}" /> </a>
 					</div>
 			</div>
 		</div>

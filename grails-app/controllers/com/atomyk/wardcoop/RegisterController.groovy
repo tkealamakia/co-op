@@ -104,7 +104,7 @@ class RegisterController {
 			if (config.security.useMail) {
 				String emailContent = """You have signed up for a ${Constants.APP_NAME} account at:
 
- ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}
+ ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/home
 
  Here are the details of your account:
  -------------------------------------

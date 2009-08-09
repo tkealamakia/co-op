@@ -7,11 +7,9 @@
 		<div class="titlebar">
 				<div class="title">My Account
 				</div>
-                <!--
 				<div class="emailpreferences">
 					<g:link class="white" controller="emailPreference" action="edit">Email Preferences</g:link>
 				</div>
-                -->
 			</div>
 		<div class="leftarea">
 			<div class="createpost">
@@ -26,11 +24,11 @@
 				<g:form class="leftside" action="update">
 					<input type="hidden" name="id" value="${person.id}" />
 					<input type="hidden" name="version" value="${person.version}" />
-					<p class="posttitle">Email Address</p>
+					<p class="posttitle">Email Address*</p>
                     <span class="value ${hasErrors(bean:person,field:'email','errors')}">
                         <input class="createpost" type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
                     </span>
-					<p class="posttitle">First Name</p>
+					<p class="posttitle">First Name*</p>
                     <span class="value ${hasErrors(bean:person,field:'firstName','errors')}">
                         <input class="createpost" type="text" id="firstName" name="firstName" value="${person.firstName?.encodeAsHTML()}"/>
                     </span>

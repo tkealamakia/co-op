@@ -43,17 +43,17 @@ class InviteController {
             // Send an e-mail to the invitees
             if (config.security.useMail) {
                 Person person = PersonHelper.getCurrentUser(authenticateService)
-                String emailContent = """You have received an invitation to co-op.
+                String emailContent = """You have received an invitation from ${person.firstName} ${person.lastName} to the ${Constants.APP_NAME},
+  a place where you can cooperate with others in the ${person.ward.name} group.
 
-
-    Please follow this link to register
+    Please follow this link to register:
     ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/register/index?group=${person.ward.name}
 
     """
 
                 def email = [
                     to: addresses, // 'to' expects a List, NOT a single email address
-                    subject: "Co-op invitation",
+                    subject: "Co-opCommunity.com invitation",
                     text: emailContent // 'text' is the email body
                 ]
                 emailerService.sendEmails([email])
