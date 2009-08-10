@@ -32,11 +32,12 @@ environments {
 		dataSource {
 			//dbCreate = "create-drop" // one of 'create', 'create-drop','update'
 			//url = "jdbc:hsqldb:mem:devDB"
+            //jdbc:mysql://localhost:3306/<database>?user=<username>&password=<password>
 			dbCreate = "update"
-			url = "jdbc:mysql://localhost/wardcoop"
+			url = "jdbc:mysql://localhost:3306/coopcomm_coop"
 			driverClassName = "com.mysql.jdbc.Driver"
-			username = "root"
-			password = ""
+			username = "coopcomm_coop"
+			password = "dakine11"
 		}
 	}
 }

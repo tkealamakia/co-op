@@ -2,6 +2,19 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main" />
+    <script language="javascript">
+        function showSaveProgress() {
+            var ele = document.getElementById("saveProgress");
+            if(ele.style.display == "block") {
+                ele.style.display = "none";
+                text.innerHTML = "show";
+            }
+            else {
+                ele.style.display = "block";
+                text.innerHTML = "hide";
+            }
+        }
+    </script>
 </head>
 <body>
 		<div class="titlebar">
@@ -79,6 +92,9 @@
 						<input class="savenewpost" type="image" src="${resource(dir:'images', file:'save.gif')}" />
 						<g:link class="cancel" action="listByUser"><img src="${resource(dir:'images',file:'cancel.gif')}" /></g:link>
 					</div>
+                    <div style="display:none" class="rightside" id="saveProgress">
+                        <img class="savenewpost" src="${resource(dir:'images', file:'progress.gif')}" />&nbsp;Uploading
+                    </div>
 				</g:form>
 			</div>
 			<div class="rightside">

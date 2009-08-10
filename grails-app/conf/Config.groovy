@@ -35,7 +35,7 @@ grails.enable.native2ascii = true
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://co-opcommunity.com/${appName}"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
@@ -54,6 +54,9 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+    appenders { 
+        file name:'stacktrace', file:"/home/coopcomm/tomcat/logs/stacktrace.log".toString()
+    }
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
 	       'org.codehaus.groovy.grails.web.pages', //  GSP

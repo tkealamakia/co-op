@@ -104,6 +104,7 @@ class ImageController {
     def image= {
         def obj = Image.get( params.id )
         byte[] image = obj.image
+        response.contentType = "image/jpeg"
         response.outputStream << image
     }
 }
