@@ -79,7 +79,7 @@ would like to create a co-op, just email request@co-opCommunity.com.</p>
 		</div>
 		<div class="adsright">
                 <div class="hometitleright"><div class="hometitlerighttext">Helping Communities Thrive</div></div>
-				<img class="topad" src="/wardcoop/images/hometiles.gif" />
+				<img class="topad" src="${resource(dir:'images', file:'hometiles.gif')}" />
 				</div>
 
 		<div class="footer">
