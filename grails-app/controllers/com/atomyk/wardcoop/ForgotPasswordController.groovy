@@ -11,7 +11,7 @@ class ForgotPasswordController {
 
 	static Map allowedMethods = [updatePassword: 'POST', sendForgotPassword: 'POST']
 
-
+    def index = {}
     def editForgotPassword = {}
 
     def sendForgotPassword = {
