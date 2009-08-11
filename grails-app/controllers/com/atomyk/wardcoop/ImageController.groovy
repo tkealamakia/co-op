@@ -107,4 +107,11 @@ class ImageController {
         response.contentType = "image/jpeg"
         response.outputStream << image
     }
+    @Secured(['ROLE_USER'])
+    def imageThumb= {
+        def obj = Image.get( params.id )
+        byte[] image = obj.thumbnail
+        response.contentType = "image/jpeg"
+        response.outputStream << image
+    }
 }

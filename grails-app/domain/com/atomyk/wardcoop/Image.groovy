@@ -12,6 +12,7 @@ class Image {
     */
     
     byte[] image
+    byte[] thumbnail
     String type
 
     

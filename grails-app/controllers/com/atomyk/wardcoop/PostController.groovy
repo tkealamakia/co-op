@@ -261,6 +261,11 @@ class PostController {
                     imageTool.load(imageMain.image)
                     imageTool.thumbnail(640)
                     imageMain.image = imageTool.getBytes("JPEG")
+                    //thumbnail
+                    def imageToolThumb = new ImageTool()
+                    imageToolThumb.load(imageMain.image)
+                    imageToolThumb.thumbnail(100)
+                    imageMain.thumbnail = imageToolThumb.getBytes("JPEG")
 		            imageMain.save()
 		        }
 		        if (image2?.image?.length > 0) {
@@ -269,6 +274,11 @@ class PostController {
                     imageTool.load(image2.image)
                     imageTool.thumbnail(640)
                     image2.image = imageTool.getBytes("JPEG")
+                    //thumbnail
+                    def imageToolThumb = new ImageTool()
+                    imageToolThumb.load(image2.image)
+                    imageToolThumb.thumbnail(100)
+                    image2.thumbnail = imageToolThumb.getBytes("JPEG")
 		            image2.save()
 		        }
 		        if (image3?.image?.length > 0) {
@@ -277,6 +287,11 @@ class PostController {
                     imageTool.load(image3.image)
                     imageTool.thumbnail(640)
                     image3.image = imageTool.getBytes("JPEG")
+                    //thumbnail
+                    def imageToolThumb = new ImageTool()
+                    imageToolThumb.load(image3.image)
+                    imageToolThumb.thumbnail(100)
+                    image3.thumbnail = imageToolThumb.getBytes("JPEG")
 		            image3.save()
 		        }
 		            
@@ -341,7 +356,12 @@ class PostController {
                 imageTool.load(imageMain.image)
                 imageTool.thumbnail(640)
                 imageMain.image = imageTool.getBytes("JPEG")
-	            imageMain.save()
+                //thumbnail
+                def imageToolThumb = new ImageTool()
+                imageToolThumb.load(imageMain.image)
+                imageToolThumb.thumbnail(100)
+                imageMain.thumbnail = imageToolThumb.getBytes("JPEG")
+                imageMain.save()
 	        }
 	        if (image2.image.length > 0) {
                 image2.post = postInstance
@@ -349,6 +369,11 @@ class PostController {
                 imageTool.load(image2.image)
                 imageTool.thumbnail(640)
                 image2.image = imageTool.getBytes("JPEG")
+                //thumbnail
+                def imageToolThumb = new ImageTool()
+                imageToolThumb.load(image2.image)
+                imageToolThumb.thumbnail(100)
+                image2.thumbnail = imageToolThumb.getBytes("JPEG")
                 image2.save()
 	        }
 	        if (image3.image.length > 0) {
@@ -357,6 +382,12 @@ class PostController {
                 imageTool.load(image3.image)
                 imageTool.thumbnail(640)
                 image3.image = imageTool.getBytes("JPEG")
+                //thumbnail
+                def imageToolThumb = new ImageTool()
+                imageToolThumb.load(image3.image)
+                imageToolThumb.thumbnail(100)
+                image3.thumbnail = imageToolThumb.getBytes("JPEG")
+                image3.save()
                 image3.save()
 	        }
 	            

@@ -11,3 +11,4 @@ insert into category values (7, 0, 7, 'Jobs / Hiring');
 insert into category values (8, 0, 8, 'Share Resources');
 insert into category values (9, 0, 9, 'Events');
 alter table image modify image longblob;
+alter table image modify thumbnail longblob;

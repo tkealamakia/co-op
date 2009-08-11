@@ -33,7 +33,7 @@
 		            <g:each in="${postInstance.images}" status="j" var="image">
 		            	<g:if test="${image.type == 'imageMain'}">
 		            		<% foundMainPhoto = true %>
-                            <g:link action="show" id="${postInstance.id}"><img class="postthumb" src="${createLink(controller:'image', action:'image', id:image.id)}"/></g:link>
+                            <g:link action="show" id="${postInstance.id}"><img class="postthumb" src="${createLink(controller:'image', action:'imageThumb', id:image.id)}"/></g:link>
 						</g:if>
 	                </g:each>
                 </g:if>
