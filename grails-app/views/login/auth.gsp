@@ -31,7 +31,7 @@
 					<div class="loginlinks">
 						<div class="loginbutton"><input type="image" class="loginbutton" src="${resource(dir:'images', file:'login.gif')}" />
 						</div>
-						<div class="forgot"><g:link class="white" controller="forgotPassword" action="editForgotPassword">Forgot?</g:link>
+						<div class="forgot"><g:link class="white" controller="forgotPassword" >Forgot?</g:link>
 						</div>
 					</div>
 					</form>

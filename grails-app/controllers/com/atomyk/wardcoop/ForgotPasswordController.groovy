@@ -7,6 +7,7 @@ class ForgotPasswordController {
 	 */
 	def authenticateService
 	def emailerService
+    def defaultAction = 'editForgotPassword'
 
 
 	static Map allowedMethods = [updatePassword: 'POST', sendForgotPassword: 'POST']
