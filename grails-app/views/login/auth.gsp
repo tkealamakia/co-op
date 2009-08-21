@@ -44,11 +44,10 @@
 <!--Beginning of code for the title bar-->
 		<div class="titlebar">
 		</div>
-
-		<div class="leftareahome">
-			<g:if test='${flash.message}'>
-                <div class='login_message'>${flash.message}</div>
+					<g:if test='${flash.message}'>
+            <div class='login_message'>${flash.message}</div>
 			</g:if>
+		<div class="leftareahome">
             <h1 class="top">Free, Private, Community Co-ops</h1>
 				<p class="hometext">Turn your community or group into a thriving community with Co-opCommunity.com. Your community co-op will give the members of your community the perfect way to inform everyone of opportunities that might otherwise go unkonwn. Here are some of the things you might post for everyone in your community to see:</p>
 				<ul>

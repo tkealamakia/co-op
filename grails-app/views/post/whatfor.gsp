@@ -15,7 +15,7 @@
 				</div>
 				
                 <a href="javascript:window.close();">
-                    <img src="${resource(dir:'images', file:'back.gif')}" />
+                    <img src="${resource(dir:'images', file:'close.gif')}" />
                 </a>
 		</div>
 

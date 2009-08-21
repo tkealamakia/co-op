@@ -26,8 +26,7 @@ margin: 5px 0px 0px 5px;
 ul
 {
 list-style-type:square;
-color:white;
-margin:0px 0px 0px 0px;
+color:rgb(135,123,106);
 }
 
 a.white
@@ -240,7 +239,7 @@ display:inline;
 float:left;
 width:610px;
 margin:5px 0px 0px 5px;
-background-color:rgb(165,190,57);
+background-color:rgb(222,229,183);
 }
 
 div.hometitleright
@@ -424,6 +423,31 @@ width:300px;
 padding:0;
 float:left;
 margin: 5px 0px 0px 10px;
+background-image:url('/images/adsareagradient.gif');
+}
+
+div.adstext
+{
+margin:5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+border:solid thin rgb(105,96,74);
+}
+
+p.adstext
+{
+margin:5px 0px 5px 0px;
+}
+
+div.adstextbold
+{
+font-weight:bold;
+color:rgb(105,96,74);
+}
+
+ul.right
+{
+list-style-type:square;
+color:black;
 }
 
 img.topad
@@ -565,7 +589,6 @@ margin:12px 0px 0px 5px;
 div.dateposted
 {
 float:left;
-clear:left;
 margin:5px 0px 0px 0px;
 font-weight:regular;
 }
@@ -839,7 +862,7 @@ margin:5px 0px 0px 0px;
 
 p.hometext
 {
-color:white;
+color:rgb(135,123,106);
 margin:10px 0px 10px 5px;
 }
 
@@ -862,7 +885,6 @@ div.errors {
 }
 div.errors ul {
     list-style: none;
-    color: #ff0000;
     padding: 0;
 }
 div.errors li {
