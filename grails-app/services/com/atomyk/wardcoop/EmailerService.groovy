@@ -40,13 +40,23 @@ class EmailerService {
 
 		// Send them all together
 		try {
+            mailSender.setHost("mail.xmission.com")
+            mailSender.setUsername("tkealamakia")
+            mailSender.setPassword("c00pftw")
+            mailSender.setProtocol("smtp")
+            mailSender.setPort(25)
 			mailSender.send(messages as SimpleMailMessage[])
 		}
 		catch (MailException e) {
 			log.error "Failed to send emails: $e.message", e
+            e.printStackTrace();
 		}
 		catch (MessagingException e) {
 			log.error "Failed to send emails: $e.message", e
+            e.printStackTrace();
 		}
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 }
