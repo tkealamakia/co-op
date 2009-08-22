@@ -40,11 +40,16 @@ class EmailerService {
 
 		// Send them all together
 		try {
+            java.util.Properties props = new java.util.Properties()
+            props.put("mail.smtp.auth", "true")
+            props.put("mail.smtp.starttls.enable", "true")
+
             mailSender.setHost("mail.xmission.com")
             mailSender.setUsername("tkealamakia")
             mailSender.setPassword("c00pftw")
             mailSender.setProtocol("smtp")
             mailSender.setPort(25)
+            mailSender.setJavaMailProperties(props)
 			mailSender.send(messages as SimpleMailMessage[])
 		}
 		catch (MailException e) {
