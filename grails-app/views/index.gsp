@@ -2,6 +2,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="layout" content="mainPublic" />
+    <script type="text/javascript">
+    <!--
+        window.location = "home"
+    //-->
+    </script>
 </head>
 <body>
 <!--Beginning of code for the title bar-->

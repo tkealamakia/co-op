@@ -53,8 +53,6 @@ class ForgotPasswordController {
         def token = params.token
         def person = Person.findByPasswordResetToken(token)
         if (person != null) {
-            person.passwordResetToken = null
-            person.save()
             return [person: person]
         }
         else {
@@ -65,6 +63,7 @@ class ForgotPasswordController {
 
     def updatePassword = {
 		def person = Person.get(params.id)
+        person.passwordResetToken = null
 
         if (params.passwd != params.passwdConfirm) {
             flash.message = "Passwords do not match"

@@ -8,11 +8,11 @@
 				<div class="title">Password Retrieval
 				</div>
 		</div>
-        <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-        </g:if>
 		<div class="leftarea">
 			<div class="wardsearch">
+            <g:if test="${flash.message}">
+                <div class="message">${flash.message}</div>
+            </g:if>
 				<div class="emailexplanation">To re-set your password, enter your email address in the field below. An email will be sent to you with instructions for re-setting your password.</div>
 				<g:form class="leftside" action="sendForgotPassword">
 					<input class="topcreatepost" type="text" name="email" value="Enter your email address here." />

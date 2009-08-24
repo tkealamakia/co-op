@@ -395,7 +395,7 @@ class PostController {
             def peopleToNotify = category.people
             peopleToNotify.each() {
                 if (ward.id == it.ward.id) {
-                    sendEmail(it, category, postInstance.id)
+                    sendEmail(it, category, postInstance)
                 }
             }
 
@@ -432,12 +432,12 @@ class PostController {
 
     }
 
-    private sendEmail(person, category, id) {
+    private sendEmail(person, category, postInstance) {
 		def config = authenticateService.securityConfig
         if (config.security.useMail) {
             String emailContent = """A ${Constants.APP_NAME} item of the category type ${category.name} has been posted:
-
-${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/post/show/${id}
+Ad title: ${postInstance.title}
+${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/post/show/${postInstance.id}
 
 """
 

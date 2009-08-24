@@ -38,15 +38,15 @@
 				</div>				
 			</div>
 		</div>
+            <g:if test='${flash.message}'>
+                <div class='login_message'>${flash.message}</div>
+			</g:if>
 		<div class="navigation">
 		</div>
 <!--This is where the header ends-->
 <!--Beginning of code for the title bar-->
 		<div class="titlebar">
 		</div>
-					<g:if test='${flash.message}'>
-            <div class='login_message'>${flash.message}</div>
-			</g:if>
 		<div class="leftareahome">
             <h1 class="top">Free, Private, Community Co-ops</h1>
 				<p class="hometext">Turn your community or group into a thriving community with Co-opCommunity.com. Your community co-op will give the members of your community the perfect way to inform everyone of opportunities that might otherwise go unkonwn. Here are some of the things you might post for everyone in your community to see:</p>
@@ -74,7 +74,7 @@
 				<h1>Can I create a Community Co-op?</h1>
 				<p class="hometext">Once you have been invited by a member of a co-op, you can either join an existing co-op or create a new one. Simply    
 follow the link in your invitation email and create a new group. If you have not been invited to Co-opCommunity.com and you
-would like to create a co-op, just email request@co-opCommunity.com.</p>
+would like to create a co-op, just email jamesmunnerlyn@gmail.com.</p>
 		</div>
 		<div class="adsright">
                 <div class="hometitleright"><div class="hometitlerighttext">Helping Communities Thrive</div></div>

@@ -14,7 +14,7 @@
 				<div class="logo"><a href="${resource(dir:'/home')}"><img src="${resource(dir:'images',file:'logo2.gif')}" /></a>
 				</div>
 				<div class="logotextwardname">
-					<div class="logotext"><a class="logotext" href="index.html"><tags:groupName/></a>
+					<div class="logotext"><a class="logotext" href="${resource(dir:'/home')}"><tags:groupName/></a>
 					</div>
 					<div class="wardname">Community
 					</div>
@@ -126,6 +126,16 @@
 			</div>
 			
         </div>
-        
+       <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-10354379-1");
+                pageTracker._trackPageview();
+            }
+            catch(err) {}
+        </script>
     </body>	
 </html>

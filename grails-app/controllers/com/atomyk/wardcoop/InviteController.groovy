@@ -47,7 +47,7 @@ class InviteController {
   a place where you can cooperate with others in the ${person.ward.name} group.
 
     Please follow this link to register:
-    ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/register/index?group=${person.ward.name}
+    ${request.scheme}://${request.serverName}:${request.serverPort}${request.contextPath}/register/index?group=${person.ward.name.encodeAsURL()}
 
     """
 

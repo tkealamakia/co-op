@@ -11,6 +11,7 @@ class TagLib {
         out << "<div class='navigation'>"
         out << "<div class='navigationlinks'>"
         out << "<ul class='navigation'>"
+        out << "<li><a href='${request.contextPath}/home'>Home</a></li>"
         Category.findAll().each {
             out << "<li><a href='${request.contextPath}/post/list/${it.id}?max=${Constants.MAX_PER_PAGE}'>${it.name}</a></li>"
 //            out << "<li><a href='/wardcoop/post/list?categoryId=${it.id}'>${it.name}</a></li>"
