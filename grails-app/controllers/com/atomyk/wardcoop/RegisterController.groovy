@@ -98,6 +98,7 @@ class RegisterController {
 		person.passwd = pass
 		person.enabled = true
 
+
 		if (person.save()) {
 			role.addToPeople(person)
             // Configured in acegi plugin directory
@@ -123,10 +124,19 @@ class RegisterController {
 			}
 
 			person.save(flush: true)
+            person = Person.findByEmail(person.email)
+            person.categories = new ArrayList()
 
-			def auth = new AuthToken(person.email, params.passwd)
-			def authtoken = daoAuthenticationProvider.authenticate(auth)
-			SCH.context.authentication = authtoken
+            def categoryList = Category.findAll()
+            categoryList.each() {
+                println it
+                person.categories.add(it)
+            }
+			person.save(flush: true)
+
+			//def auth = new AuthToken(person.email, params.passwd)
+			//def authtoken = daoAuthenticationProvider.authenticate(auth)
+			//SCH.context.authentication = authtoken
 			redirect uri: '/home'
 		}
 		else {
