@@ -7,6 +7,7 @@ import org.codehaus.groovy.grails.plugins.springsecurity.Secured
 @Secured(['ROLE_USER'])
 class WardController {
     
+    def authenticateService
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
@@ -101,6 +102,8 @@ class WardController {
 
     def save = {
         def wardInstance = new Ward(params)
+        def person = PersonHelper.getCurrentUser(authenticateService)
+		wardInstance.ownerId = person.email
         if(!wardInstance.hasErrors() && wardInstance.save()) {
             flash.message = "Ward ${wardInstance.id} created"
             def searchMap = [wardsearch:wardInstance.name]

@@ -6,6 +6,7 @@ Setup info
       1. mailHost: mail.xmission.com
       2. mailUsername: tkealamakia
       3. mailPassword: c00pftw
+      4. useMail = true
    c. Change the value from "useRequestMapDomainClass = true" to "useRequestMapDomainClass = false"
    d. Change the value from "useControllerAnnotations= false" to "useControllerAnnotations = true"
 2. Setup mysql with root's password as 'asdfg'

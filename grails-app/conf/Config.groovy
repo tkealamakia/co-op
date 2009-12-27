@@ -54,9 +54,9 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
-    appenders { 
-        file name:'stacktrace', file:"/home/coopcomm/tomcat/logs/stacktrace.log".toString()
-    }
+    //appenders {
+    //    file name:'stacktrace', file:"/home/coopcomm/tomcat/logs/stacktrace.log".toString()
+    //}
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
 	       'org.codehaus.groovy.grails.web.pages', //  GSP

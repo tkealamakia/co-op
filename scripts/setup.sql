@@ -1,6 +1,6 @@
 insert into authority values (1, 0, 'ROLE_USER', 'Default User');
 insert into authority values (2, 0, 'ROLE_ADMIN', 'Admin User');
-insert into ward values (1, 0, 'Default');
+insert into ward values (1, 0, 'Default', 'Default');
 insert into category values (1, 0, 1, 'Free Stuff');
 insert into category values (2, 0, 2, 'For Sale');
 insert into category values (3, 0, 3, 'For Rent');
