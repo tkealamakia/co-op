@@ -103,7 +103,7 @@ class WardController {
     def save = {
         def wardInstance = new Ward(params)
         def person = PersonHelper.getCurrentUser(authenticateService)
-		wardInstance.ownerId = person.email
+        wardInstance.ownerId = person.email
         if(!wardInstance.hasErrors() && wardInstance.save()) {
             flash.message = "Ward ${wardInstance.id} created"
             def searchMap = [wardsearch:wardInstance.name]

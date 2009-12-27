@@ -38,7 +38,6 @@ class InviteController {
                     addresses += address
                 }
                 else {
-			println "test6"
                     inError = true
                 }
             }

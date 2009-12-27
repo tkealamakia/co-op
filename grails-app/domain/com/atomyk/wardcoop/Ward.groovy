@@ -3,7 +3,7 @@ package com.atomyk.wardcoop;
 class Ward {
     
     String name
-	String ownerId
+    String ownerId
     
     static hasMany = [people: Person, posts: Post]
     static constraints = {
