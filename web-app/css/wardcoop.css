@@ -135,7 +135,7 @@ width:300px;
 height:100px;
 float:right;
 margin:0px 0px 0px 0px;
-background-image: url(/wardcoop/images/linkbox.gif);
+background-image: url(/images/linkbox.gif);
 }
 
 div.toplinksleft
@@ -184,7 +184,7 @@ height:25px;
 width:920px;
 float:left;
 margin:20px 0px 0px 5px;
-background-image:url('/wardcoop/images/greenbar.gif');
+background-image:url('/images/greenbar.gif');
 background-repeat:repeat-x;
 }
 
@@ -213,7 +213,7 @@ color:white;
 
 ul.navigation a:hover
 {
-background-image:url('/wardcoop/images/brownbar.gif');
+background-image:url('/images/brownbar.gif');
 background-repeat:repeat-x;
 border-right:1px solid white;
 color:white;
@@ -246,7 +246,7 @@ div.hometitleright
 {
 width:300px;
 height:25px;
-background-image:url('/wardcoop/images/brownbar.gif');
+background-image:url('/images/brownbar.gif');
 background-repeat:repeat-x;
 
 }
@@ -271,7 +271,7 @@ height:26px;
 width:920px;
 float:left;
 margin:10px 0px 5px 5px;
-background-image:url('/wardcoop/images/brownbar.gif');
+background-image:url('/images/brownbar.gif');
 background-repeat:repeat-x;
 }
 
@@ -396,7 +396,7 @@ float:left;
 clear:left;
 height:25px;
 width:610px;
-background-image:url('/wardcoop/images/brownbar.gif');
+background-image:url('/images/brownbar.gif');
 background-repeat:repeat-x;
 }
 
@@ -423,7 +423,7 @@ width:300px;
 padding:0;
 float:left;
 margin: 5px 0px 0px 10px;
-background-image:url('/wardcoop/images/adsareagradient.gif');
+background-image:url('/images/adsareagradient.gif');
 }
 
 div.adstext
@@ -869,7 +869,7 @@ margin:10px 0px 10px 5px;
 
 /* MESSAGES AND ERRORS */
 .message {
-    background: #f3f8fc url(../wardcoop/images/skin/information.png) 8px 50% no-repeat;
+    background: #f3f8fc url(../images/skin/information.png) 8px 50% no-repeat;
     border: 1px solid #b2d1ff;
     color: #006dba;
     margin: 10px 0 5px 0;
@@ -888,7 +888,7 @@ div.errors ul {
     padding: 0;
 }
 div.errors li {
-	background: url(../wardcoop/images/skin/exclamation.png) 8px 0% no-repeat;
+	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
     line-height: 16px;
     padding-left: 30px;
 }
