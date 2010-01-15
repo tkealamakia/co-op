@@ -15,6 +15,9 @@
 			</div>
 		</div>
 		<div class="leftarea">
+			<g:if test="${flash.message}">
+				<div class="message">${flash.message}</div>
+			</g:if>
 			<div class="categories">
 
 					<div class="leftcategory">

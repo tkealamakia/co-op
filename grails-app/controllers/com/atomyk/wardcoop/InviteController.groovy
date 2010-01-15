@@ -15,11 +15,9 @@ class InviteController {
     def create = {
 		Person person = PersonHelper.getCurrentUser(authenticateService)
 		Ward group = person.ward
-		println person.ward.ownerId
-		println person.email
 		if (person.email != group.ownerId) {
 			flash.message = "Only the owner of the group may send invites."
-			return
+			redirect uri: '/home'
 		}
 	}
 
